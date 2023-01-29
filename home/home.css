@@ -1,0 +1,51 @@
+* {
+  color: #FFFFFF;
+  font-family: "Manrope", sans-serif;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas: "navbar-area" "carusel-area" "products-area" "categories-area" "footer-area";
+  grid-template-rows: 70% 40% 40% 40% 16%;
+  min-height: 100vh;
+}
+
+.logo-area {
+  width: 50px;
+  height: 50px;
+  background-image: url("assets/LogoTealicious1.png");
+}
+
+.navbar-area {
+  display: grid;
+  grid-area: navbar-area;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  justify-content: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("assets/Background21.jpg");
+  background-size: cover;
+}
+
+.navbar-area > a {
+  font-size: 30px;
+  text-decoration: none;
+}
+
+.carusel-area {
+  grid-area: carusel-area;
+  background-color: green;
+}
+
+.products-area {
+  grid-area: products-area;
+  background-color: red;
+}
+
+.categories-area {
+  grid-area: categories-area;
+  background-color: blue;
+}
+
+.footer-area {
+  grid-area: footer-area;
+  background-color: purple;
+}/*# sourceMappingURL=home.css.map */
