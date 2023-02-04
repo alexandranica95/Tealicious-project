@@ -1,22 +1,8 @@
+@import url('/variables.scss');
 @mixin circle($i) {
     border-radius: 100%;
     height: $i;
     width: $i;
-  }
-  
-  $bgBlue: #D87D4A;
-  $cardBlue: #FBAF85;
-  $font: "Poppins";
-  
-  html,
-  body {
-    height: 100%;
-  }
-  
-  body {
-    background: white;
-    font-family: $font, sans-serif;
-    overflow: hidden;
   }
   
   .center {
@@ -52,7 +38,7 @@
     }
   
     & > .content {
-      background: $cardBlue;
+      background: $light-orange;
       border-bottom-left-radius: inherit;
       border-bottom-right-radius: inherit;
       padding: 1em;
@@ -81,7 +67,7 @@
     margin-top: 1em;
     & > button {
       all: unset;
-      background: #FBAF85;
+      background: $light-orange;
       cursor: pointer;
       margin: 0 0.125em;
       position: relative;
@@ -103,27 +89,26 @@
   
 .bar-container {
 display: grid;
-grid-template-areas:
-'bar-container' ;
 grid-template-columns: 33.33% 33.33% 33.33% ;
 height: 8%;
 text-align: center;
+margin-bottom: 5%;
 }
 
 .bar-container > div {
 margin-top: 2%;
 font-family: $font, sans-serif;
-box-shadow: 0.5px 1px 5px #FBAF85;
+box-shadow: 0.5px 1px 5px $light-orange;
 padding-top: 2%;
 font-size: 160%;
 }
 
 .bar-container > div:hover{
-  background-color: #FBAF85;
+  background-color: $light-orange;
 }
 
 .focus{
-  background-color: #FBAF85;
+  background-color: $light-orange;
 }
 
 .display-none{

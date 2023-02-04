@@ -1,22 +1,9 @@
+@import url('/variables.scss');
+
 @mixin circle($i) {
     border-radius: 100%;
     height: $i;
     width: $i;
-  }
-  
-  $bgBlue: #D87D4A;
-  $cardBlue: #FBAF85;
-  $font: "Poppins";
-  
-  html,
-  body {
-    height: 100%;
-  }
-  
-  body {
-    background: white;
-    font-family: $font, sans-serif;
-    overflow: hidden;
   }
   
   .center {
@@ -39,6 +26,7 @@
       transition: all 1s ease-in-out;
     }
   }
+
 .category-title{
     text-align: center;
     font-size: 150%;
@@ -62,7 +50,7 @@
     }
   
     & > .content {
-      background: $cardBlue;
+      background: $light-orange;
       border-bottom-left-radius: inherit;
       border-bottom-right-radius: inherit;
       padding: 1em;
@@ -78,4 +66,17 @@
         line-height: 1;
       }
   
-         }     }
+         }     
+  }
+
+.img-bubble-tea{
+  content: url("/assets/images/home/bubbleTea.jpg");
+}
+
+.img-matcha-latte{
+  content: url("/assets/images/home/MatchaLatte_1.jpg");
+}
+
+.img-waffles{
+  content: url("/assets/images/home/waffles.jpg");
+}

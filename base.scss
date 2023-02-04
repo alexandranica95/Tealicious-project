@@ -1,4 +1,11 @@
+@import 'variables.scss';
+
 *{
-    color: $white;
+    color: $black;
     font-family: 'Manrope', sans-serif;
+}
+
+
+body {
+    margin: 0;
 }

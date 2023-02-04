@@ -47,3 +47,11 @@ productsWrapper.addEventListener("click", e => {
     bubbleTeaProducts[1].classList.add("display-none")
   }
 })
+
+
+const b1 = document.querySelector(".b1");
+const i1 = document.querySelector(".i1");
+
+b1.addEventListener("click", e => {
+  console.log(i1.value)
+});
