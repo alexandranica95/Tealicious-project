@@ -1,24 +1,56 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Home Page</title>
-    <link href="carousel.css" rel="stylesheet"/>
-</head>
-<body>
-
-
-
-
-
-  
+<div class = "carousel-component">
+  <div class="bar-container">
+    <div class="focus first">Bubble tea</div>
+    <div class="second">New arrivals</div>
+    <div class="third">Bestsellers</div>
+  </div> 
   <div class="center">
     <div class="wrapper">
-      <div class="inner">
-       
+      <div id = "bubble-tea" class="bubble-tea-products">      
+        <div class="card">
+          <img src="../../assets/images/home/blue coral.jpg">
+          <div class="content">
+            <h1>Blue coral</h1>
+            <h3>White tea</h3>
+            <div>
+              <label for="quantity">Quantity:</label>
+              <input class = "i1" type="number" id="quantity" name="quantity" min="0" max="100">
+              <button class = "b1">Add to cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="../../assets/images/home/salted coco.jpg">
+          <div class="content">
+            <h1>Salted coco</h1>
+            <h3>Back tea
+            </h3>
+            <div>
+              <label for="quantity">Quantity:</label>
+              <input type="number" id="quantity" name="quantity" min="0" max="100">
+              <button>Add to cart</button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <img src="../../assets/images/home/kiwi fruit tea.jpg">
+          <div class="content">
+            <h1>Kiwi fruit tea</h1>
+            <h3>Green tea</h3>
+            <div>
+              <label for="quantity">Quantity:</label>
+              <input type="number" id="quantity" name="quantity" min="0" max="100">
+              <button>Add to cart</button>
+            </div>
+          </div>
+        </div>
+
         <div class="card">
           <img src="https://colorlib.com/preview/theme/seogo/img/case_study/2.png">
           <div class="content">
-            <h1>Custom Website</h1>
+            <h1>Digital Marketing</h1>
             <h3>UI/UX, Design</h3>
             <div>
               <label for="quantity">Quantity:</label>
@@ -27,6 +59,7 @@
             </div>
           </div>
         </div>
+
         <div class="card">
           <img src="https://colorlib.com/preview/theme/seogo/img/case_study/3.png">
           <div class="content">
@@ -39,6 +72,7 @@
             </div>
           </div>
         </div>
+
         <div class="card">
           <img src="https://colorlib.com/preview/theme/seogo/img/case_study/1.png">
           <div class="content">
@@ -51,42 +85,7 @@
             </div>
           </div>
         </div>
-        <div class="card">
-          <img src="https://colorlib.com/preview/theme/seogo/img/case_study/2.png">
-          <div class="content">
-            <h1>Digital Marketing</h1>
-            <h3>UI/UX, Design</h3>
-            <div>
-              <label for="quantity">Quantity:</label>
-              <input type="number" id="quantity" name="quantity" min="0" max="100">
-              <button>Add to cart</button>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <img src="https://colorlib.com/preview/theme/seogo/img/case_study/3.png">
-          <div class="content">
-            <h1>Digital Marketing</h1>
-            <h3>UI/UX, Design</h3>
-            <div>
-              <label for="quantity">Quantity:</label>
-              <input type="number" id="quantity" name="quantity" min="0" max="100">
-              <button>Add to cart</button>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <img src="https://colorlib.com/preview/theme/seogo/img/case_study/1.png">
-          <div class="content">
-            <h1>Digital Marketing</h1>
-            <h3>UI/UX, Design</h3>
-            <div>
-              <label for="quantity">Quantity:</label>
-              <input type="number" id="quantity" name="quantity" min="0" max="100">
-              <button>Add to cart</button>
-            </div>
-          </div>
-        </div>
+        
         <div class="card">
           <img src="https://colorlib.com/preview/theme/seogo/img/case_study/2.png">
           <div class="content">
@@ -124,6 +123,34 @@
           </div>
         </div>
       </div>
+      <div id = "new-arrivals" class="bubble-tea-products display-none">      
+        <div class="card">
+          <img src="https://colorlib.com/preview/theme/seogo/img/case_study/2.png">
+          <div class="content">
+            <h1>CACA MACA</h1>
+            <h3>CACA MACA</h3>
+            <div>
+              <label for="quantity">Quantity:</label>
+              <input type="number" id="quantity" name="quantity" min="0" max="100">
+              <button>Add to cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id = "best-sellers" class="bubble-tea-products display-none">      
+        <div class="card">
+          <img src="https://colorlib.com/preview/theme/seogo/img/case_study/2.png">
+          <div class="content">
+            <h1>ALE ALE</h1>
+            <h3>CACA MACA</h3>
+            <div>
+              <label for="quantity">Quantity:</label>
+              <input type="number" id="quantity" name="quantity" min="0" max="100">
+              <button>Add to cart</button>
+            </div>
+          </div>
+        </div>
+      </div> 
     </div>
     
     <div class="map">
@@ -131,7 +158,6 @@
       <button class="second"></button>
       <button class="third"></button>
     </div>
+
   </div>
-</body>
-<script src="carousel.js"></script>
-</html>
+</div>

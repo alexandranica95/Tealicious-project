@@ -1,0 +1,58 @@
+.center {
+  height: 60%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.category-title {
+  text-align: center;
+  font-size: 150%;
+  margin-bottom: 2%;
+}
+
+.category-title:hover {
+  transform: scale(1.3);
+  transition: all 1s ease-in-out;
+}
+
+.card {
+  height: 100.1%;
+  border-radius: 1em;
+  box-shadow: 0.5px 2px 4px #aea097;
+  cursor: pointer;
+}
+.card > img {
+  border-top-right-radius: inherit;
+  border-top-left-radius: inherit;
+  display: block;
+  width: 17.5em;
+}
+.card > .content {
+  background: #fbcdb4;
+  border-bottom-left-radius: inherit;
+  border-bottom-right-radius: inherit;
+  padding: 1em;
+  text-align: center;
+}
+.card > .content > h1 {
+  margin: 0.35em 0;
+}
+.card > .content > h1 {
+  color: black;
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.img-bubble-tea {
+  content: url("/assets/images/home/bubbleTea.jpg");
+}
+
+.img-matcha-latte {
+  content: url("/assets/images/home/MatchaLatte_1.jpg");
+}
+
+.img-waffles {
+  content: url("/assets/images/home/waffles.jpg");
+}/*# sourceMappingURL=category.css.map */
