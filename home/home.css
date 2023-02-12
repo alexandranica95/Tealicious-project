@@ -1,5 +1,3 @@
-@import url("/variables.scss");
-@import url("/variables.scss");
 * {
   color: #000000;
   font-family: "Manrope", sans-serif;
@@ -7,6 +5,21 @@
 
 body {
   margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper {
+  display: flex;
+  grid-gap: 2em;
+  overflow: hidden;
+  width: 60em;
+}
+.wrapper > .bubble-tea-products, .wrapper .new-arrivals-products {
+  display: flex;
+  grid-gap: 2.6em;
+  transition: all 1s ease-in-out;
+  height: 85%;
 }
 
 .center {
@@ -17,21 +30,9 @@ body {
   justify-content: center;
 }
 
-.wrapper {
-  display: flex;
-  grid-gap: 1em;
-  overflow: hidden;
-  width: 55em;
-}
-.wrapper > .bubble-tea-products, .wrapper .new-arrivals-products {
-  display: flex;
-  grid-gap: 1em;
-  transition: all 1s ease-in-out;
-}
-
 .card {
-  border-radius: 0.5em;
-  box-shadow: 0.5px 1px 5px grey;
+  border-radius: 3em;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 .card > img {
   border-top-right-radius: inherit;
@@ -40,7 +41,7 @@ body {
   width: 17.5em;
 }
 .card > .content {
-  background: #FBAF85;
+  background-color: #FFFFFF;
   border-bottom-left-radius: inherit;
   border-bottom-right-radius: inherit;
   padding: 1em;
@@ -65,13 +66,12 @@ body {
 }
 .map > button {
   all: unset;
-  background: #FBAF85;
+  background: #fee8dc;
   cursor: pointer;
   margin: 0 0.125em;
   position: relative;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
   border-radius: 100%;
   height: 1em;
@@ -91,25 +91,24 @@ body {
 .bar-container {
   display: grid;
   grid-template-columns: 33.33% 33.33% 33.33%;
-  height: 8%;
+  height: 100%;
   text-align: center;
   margin-bottom: 5%;
 }
 
 .bar-container > div {
-  margin-top: 2%;
   font-family: "Poppins", sans-serif;
-  box-shadow: 0.5px 1px 5px #FBAF85;
+  box-shadow: 0.5px 1px 5px #fee8dc;
   padding-top: 2%;
   font-size: 160%;
 }
 
 .bar-container > div:hover {
-  background-color: #FBAF85;
+  background-color: #fbcdb4;
 }
 
 .focus {
-  background-color: #FBAF85;
+  background-color: #fbcdb4;
 }
 
 .display-none {
@@ -124,21 +123,10 @@ body {
   justify-content: center;
 }
 
-.wrapper {
-  display: flex;
-  grid-gap: 1em;
-  overflow: hidden;
-  width: 55em;
-}
-.wrapper > .bubble-tea-products, .wrapper .new-arrivals-products {
-  display: flex;
-  grid-gap: 1em;
-  transition: all 1s ease-in-out;
-}
-
 .category-title {
   text-align: center;
   font-size: 150%;
+  margin-bottom: 2%;
 }
 
 .category-title:hover {
@@ -159,7 +147,7 @@ body {
   width: 17.5em;
 }
 .card > .content {
-  background: #FBAF85;
+  background: #fbcdb4;
   border-bottom-left-radius: inherit;
   border-bottom-right-radius: inherit;
   padding: 1em;
@@ -186,17 +174,46 @@ body {
   content: url("/assets/images/home/waffles.jpg");
 }
 
+.footer-component {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("/assets/images/Background-home-page.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 25% 25% 25% 25%;
+  text-align: left;
+  font-size: 125%;
+}
+
+.footer-component > div, i {
+  color: #FFFFFF;
+}
+
 .grid-container {
   display: grid;
-  grid-template-areas: "navbar-area" "carusel-area" "categories-area" "footer-area";
+  grid-template-areas: "navbar-area" "carousel-area" "categories-area" "footer-area";
   grid-template-rows: 70% 60% 50% 20%;
   min-height: 100vh;
 }
 
 .logo-area {
-  width: 100px;
-  height: 100px;
-  background-image: url("/assets/images/LogoTealicious1.png");
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.image1 {
+  position: relative;
+  top: 0;
+  left: 0;
+  border: 1px solid #fbcdb4;
+}
+
+.image2 {
+  position: absolute;
+  top: 50px;
+  left: 30px;
+  border: 1px solid #FFFFFF;
 }
 
 .navbar-area {
@@ -204,7 +221,7 @@ body {
   grid-area: navbar-area;
   grid-template-columns: 20% 20% 20% 20% 20%;
   justify-content: center;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("/assets/images/Background21.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("/assets/images/Background-home-page.jpg");
   background-size: cover;
 }
 
@@ -215,7 +232,7 @@ body {
 }
 
 .carousel-area {
-  grid-area: carusel-area;
+  grid-area: carousel-area;
 }
 
 .categories-area {
@@ -224,5 +241,4 @@ body {
 
 .footer-area {
   grid-area: footer-area;
-  background-color: purple;
 }/*# sourceMappingURL=home.css.map */

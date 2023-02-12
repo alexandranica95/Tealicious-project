@@ -2,12 +2,13 @@
 @import '../base.scss';
 @import './carousel/carousel.scss';
 @import './categories/category.scss';
+@import './footer/footer.scss';
 
 .grid-container{
     display: grid;
     grid-template-areas: 
     'navbar-area'
-    'carusel-area'
+    'carousel-area'
     'categories-area'
     'footer-area';
 
@@ -16,17 +17,30 @@
 }
 
 .logo-area {
-    width: 100px;
-    height: 100px;
-    background-image: url("/assets/images/LogoTealicious1.png");
+    position: relative;
+    top: 0;
+    left: 0;
 }
+.image1 {
+    position: relative;
+    top: 0;
+    left: 0;
+    border: 1px solid $light-orange;
+  }
+  
+  .image2 {
+    position: absolute;
+    top: 50px;
+    left: 30px;
+    border: 1px solid $white;
+  }
 
 .navbar-area{
     display: grid;
     grid-area: navbar-area;
     grid-template-columns: 20% 20% 20% 20% 20% ;
     justify-content: center;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("/assets/images/Background21.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("/assets/images/Background-home-page.jpg");
     background-size: cover;
 }
 
@@ -37,7 +51,7 @@
 }
 
 .carousel-area{
-    grid-area: carusel-area;
+    grid-area: carousel-area;
 }
 
 .categories-area{
@@ -46,5 +60,4 @@
 
 .footer-area{
     grid-area: footer-area;
-    background-color: purple;
 }

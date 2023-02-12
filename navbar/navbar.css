@@ -1,0 +1,16 @@
+.navbar-area {
+  display: grid;
+  grid-area: navbar-area;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  justify-content: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("/assets/images/Background21.jpg");
+  background-size: cover;
+}
+
+.navbar-area > a {
+  font-size: 30px;
+  text-decoration: none;
+  color: #FFFFFF;
+  transform: scale(1.2);
+  transition: all 1s ease-in-out;
+}/*# sourceMappingURL=navbar.css.map */

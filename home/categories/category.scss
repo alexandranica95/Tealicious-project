@@ -1,4 +1,4 @@
-@import url('/variables.scss');
+@import '../../variables.scss';
 
 @mixin circle($i) {
     border-radius: 100%;
@@ -14,22 +14,10 @@
     justify-content: center;
   }
 
-  .wrapper {
-    display: flex;
-    grid-gap: 1em;
-    overflow: hidden;
-    width: 55em;
-    
-    & > .bubble-tea-products, .new-arrivals-products {
-      display: flex;
-      grid-gap: 1em;
-      transition: all 1s ease-in-out;
-    }
-  }
-
 .category-title{
     text-align: center;
     font-size: 150%;
+    margin-bottom: 2%;
 }
 
 .category-title:hover{

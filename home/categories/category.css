@@ -6,21 +6,10 @@
   justify-content: center;
 }
 
-.wrapper {
-  display: flex;
-  grid-gap: 1em;
-  overflow: hidden;
-  width: 55em;
-}
-.wrapper > .bubble-tea-products, .wrapper .new-arrivals-products {
-  display: flex;
-  grid-gap: 1em;
-  transition: all 1s ease-in-out;
-}
-
 .category-title {
   text-align: center;
   font-size: 150%;
+  margin-bottom: 2%;
 }
 
 .category-title:hover {
@@ -41,7 +30,7 @@
   width: 17.5em;
 }
 .card > .content {
-  background: #FBAF85;
+  background: #fbcdb4;
   border-bottom-left-radius: inherit;
   border-bottom-right-radius: inherit;
   padding: 1em;
@@ -57,13 +46,13 @@
 }
 
 .img-bubble-tea {
-  content: url("../../assets/images/home/bubbleTea.jpg");
+  content: url("/assets/images/home/bubbleTea.jpg");
 }
 
 .img-matcha-latte {
-  content: url("../../assets/images/home/MatchaLatte_1.jpg");
+  content: url("/assets/images/home/MatchaLatte_1.jpg");
 }
 
 .img-waffles {
-  content: url("../../assets/images/home/waffles.jpg");
+  content: url("/assets/images/home/waffles.jpg");
 }/*# sourceMappingURL=category.css.map */
