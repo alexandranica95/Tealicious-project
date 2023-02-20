@@ -1,0 +1,145 @@
+* {
+  color: #000000;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper {
+  display: flex;
+  grid-gap: 2.6em;
+  overflow: hidden;
+  width: 60em;
+}
+.wrapper > .bubble-tea-products, .wrapper .new-arrivals-products {
+  display: flex;
+  grid-gap: 2.6em;
+  transition: all 1s ease-in-out;
+  height: 85%;
+}
+
+.card {
+  padding: 0.3em;
+  display: grid;
+  max-height: 25em;
+  min-height: 20em;
+  grid-template-rows: 75% 25%;
+  border-radius: 1em;
+  box-shadow: 0.5px 2px 4px #aea097;
+  cursor: pointer;
+}
+.card > img {
+  border-radius: inherit;
+}
+.card > .content {
+  display: grid;
+  background: #FFFFFF;
+  border-bottom-left-radius: inherit;
+  border-bottom-right-radius: inherit;
+  text-align: center;
+}
+.card > .content > h2 {
+  margin: 0.35em 0;
+}
+.card > .content > h2 {
+  color: black;
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+img {
+  content: url("/assets/images/categorypage/green-apple-fruittea.jpg");
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 99%;
+}
+
+.title-container {
+  padding-top: 1.5em;
+  display: grid;
+  grid-template-columns: 60% 25%;
+}
+
+.title {
+  font-weight: 600;
+}
+
+.price {
+  font-weight: 600;
+  font-size: larger;
+}
+
+.wrap-container {
+  display: grid;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.category-container {
+  justify-content: center;
+  display: grid;
+  grid-template-columns: 25em 25em 25em;
+  height: 13em;
+}
+
+.category-container > div {
+  height: auto;
+  margin: 0 auto;
+  position: relative;
+  background-size: 120%;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  height: 64%;
+  width: 33%;
+  border-radius: 3em;
+  box-shadow: grey 1px 1.5px 5px;
+  background-color: #fee8dc;
+}
+
+.tea-icon {
+  background-image: url(/assets/images/categorypage/bubble-tea.png);
+}
+
+.coffee-icon {
+  background-image: url(/assets/images/categorypage/coffeeEX.png);
+}
+
+.waffle-icon {
+  background-image: url(/assets/images/categorypage/wafflEX.png);
+}
+
+.subcategory-container {
+  display: grid;
+  grid-template-rows: 70%;
+  justify-content: center;
+  min-height: 8em;
+}
+
+select {
+  border-radius: 2em;
+  margin-top: 7%;
+  width: 300px;
+  padding: 5px;
+  border: none;
+  background-color: #fee8dc;
+}
+
+.fruit-tea-container, .milk-tea-container, .cheesecake-container {
+  display: grid;
+  grid-template-columns: 13% 13% 13% 13%;
+  grid-gap: 40px;
+  justify-content: center;
+}
+
+.products-container {
+  margin-top: 5%;
+  display: grid;
+  grid-gap: 10em;
+  height: -moz-fit-content;
+  height: fit-content;
+}/*# sourceMappingURL=products.css.map */

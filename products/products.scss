@@ -1,0 +1,71 @@
+@import '../variables.scss';
+@import '../shared/card/card.scss';
+
+.wrap-container{ 
+   display: grid;
+   width: fit-content;
+}
+
+.category-container{
+     justify-content: center;
+     display: grid;
+     grid-template-columns: 25em 25em 25em;
+     height: 13em;
+}
+
+.category-container > div{
+     height: auto;
+     margin: 0 auto;
+     position: relative;
+     background-size: 120%;
+     background-position:50%;
+     background-repeat: no-repeat;
+     height: 64%;
+     width: 33%;
+     border-radius: 3em;
+     box-shadow: grey 1px 1.5px 5px;
+     background-color:$light-salmon;
+}
+
+.tea-icon {
+     background-image: url(/assets/images/categorypage/bubble-tea.png);
+}
+
+.coffee-icon{
+     background-image: url(/assets/images/categorypage/coffeeEX.png);
+}
+
+.waffle-icon{
+     background-image: url(/assets/images/categorypage/wafflEX.png);
+}
+
+.subcategory-container{
+     display: grid;
+     grid-template-rows: 70%;
+     justify-content: center;
+     min-height: 8em;
+}
+
+select {
+     border-radius: 2em;
+     margin-top: 7%;
+     width: 300px;
+     padding: 5px;
+     border: none;
+     background-color: $light-salmon;
+}
+
+.fruit-tea-container, .milk-tea-container, .cheesecake-container {
+     display: grid;
+     grid-template-columns:13% 13% 13% 13%;
+     grid-gap: 40px;
+     justify-content: center;
+}
+
+.products-container{
+     margin-top: 5%;
+     display: grid;
+     grid-gap: 10em;
+     height: fit-content;
+}
+

@@ -11,7 +11,7 @@ body {
 
 .wrapper {
   display: flex;
-  grid-gap: 2em;
+  grid-gap: 2.6em;
   overflow: hidden;
   width: 60em;
 }
