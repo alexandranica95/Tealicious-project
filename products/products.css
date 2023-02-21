@@ -29,7 +29,7 @@ body {
   min-height: 20em;
   grid-template-rows: 75% 25%;
   border-radius: 1em;
-  box-shadow: 0.5px 2px 4px #aea097;
+  box-shadow: 0.5px 3px 4px #585858;
   cursor: pointer;
 }
 .card > img {
@@ -42,17 +42,9 @@ body {
   border-bottom-right-radius: inherit;
   text-align: center;
 }
-.card > .content > h2 {
-  margin: 0.35em 0;
-}
-.card > .content > h2 {
-  color: black;
-  font-size: 1.25rem;
-  line-height: 1;
-}
 
 img {
-  content: url("/assets/images/categorypage/green-apple-fruittea.jpg");
+  content: url("/assets/images/categorypage/greenapple.jpg");
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
@@ -67,11 +59,22 @@ img {
 
 .title {
   font-weight: 600;
+  padding-left: 1em;
+  text-align: left;
 }
 
 .price {
   font-weight: 600;
   font-size: larger;
+  text-align: right;
+  color: #585858;
+}
+
+.description {
+  color: #8A8989;
+  padding-left: 1em;
+  text-align: left;
+  font-size: small;
 }
 
 .wrap-container {
