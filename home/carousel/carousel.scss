@@ -82,22 +82,22 @@ display: grid;
 grid-template-columns: 33.33% 33.33% 33.33% ;
 height: 100%;
 text-align: center;
-margin-bottom: 5%;
+margin-bottom: 4%;
 }
 
 .bar-container > div {
 font-family: $font, sans-serif;
-box-shadow: 0.5px 1px 5px $light-salmon;
+box-shadow: 0.5px 1px 5px $dark-grey;
 padding-top: 2%;
 font-size: 160%;
 }
 
 .bar-container > div:hover{
-  background-color: $light-orange;
+  background-color: $dark-grey;
 }
 
 .focus{
-  background-color: $light-orange;
+  background-color: $yellow;
 }
 
 .display-none{

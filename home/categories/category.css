@@ -30,7 +30,7 @@
   width: 17.5em;
 }
 .card > .content {
-  background: #fbcdb4;
+  background: #FFFFFF;
   border-bottom-left-radius: inherit;
   border-bottom-right-radius: inherit;
   padding: 1em;
@@ -40,7 +40,7 @@
   margin: 0.35em 0;
 }
 .card > .content > h1 {
-  color: black;
+  color: #000000;
   font-size: 1.25rem;
   line-height: 1;
 }

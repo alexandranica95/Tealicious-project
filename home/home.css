@@ -1,6 +1,6 @@
 * {
   color: #000000;
-  font-family: "Poppins", sans-serif;
+  font-family: "Manrope", sans-serif;
 }
 
 body {
@@ -93,22 +93,22 @@ body {
   grid-template-columns: 33.33% 33.33% 33.33%;
   height: 100%;
   text-align: center;
-  margin-bottom: 5%;
+  margin-bottom: 4%;
 }
 
 .bar-container > div {
-  font-family: "Poppins", sans-serif;
-  box-shadow: 0.5px 1px 5px #fee8dc;
+  font-family: "Manrope", sans-serif;
+  box-shadow: 0.5px 1px 5px #d1d1d1;
   padding-top: 2%;
   font-size: 160%;
 }
 
 .bar-container > div:hover {
-  background-color: #fbcdb4;
+  background-color: #d1d1d1;
 }
 
 .focus {
-  background-color: #fbcdb4;
+  background-color: #F1C617;
 }
 
 .display-none {
@@ -147,7 +147,7 @@ body {
   width: 17.5em;
 }
 .card > .content {
-  background: #fbcdb4;
+  background: #FFFFFF;
   border-bottom-left-radius: inherit;
   border-bottom-right-radius: inherit;
   padding: 1em;
@@ -157,7 +157,7 @@ body {
   margin: 0.35em 0;
 }
 .card > .content > h1 {
-  color: black;
+  color: #000000;
   font-size: 1.25rem;
   line-height: 1;
 }
@@ -192,21 +192,23 @@ body {
 .grid-container {
   display: grid;
   grid-template-areas: "navbar-area" "carousel-area" "categories-area" "footer-area";
-  grid-template-rows: 70% 60% 50% 20%;
+  grid-template-rows: 50% 60% 50% 20%;
   min-height: 100vh;
 }
 
 .logo-area {
-  position: relative;
-  top: 0;
-  left: 0;
+  display: grid;
+  background-size: 75%;
+  margin-top: 1.3em;
+  background-repeat: no-repeat;
+  background-image: url("/assets/images/home/logo-456x174.png");
 }
 
 .image1 {
   position: relative;
   top: 0;
   left: 0;
-  border: 1px solid #fbcdb4;
+  border: 1px solid #d1d1d1;
 }
 
 .image2 {
@@ -219,23 +221,31 @@ body {
 .navbar-area {
   display: grid;
   grid-area: navbar-area;
-  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-columns: 14.28% 14.28% 14.28% 14.28% 14.28% 14.28% 14.28%;
   justify-content: center;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("/assets/images/Background-home-page.jpg");
+  background-image: linear-gradient(rgba(13, 12, 12, 0.495), rgba(80, 80, 80, 0.591)), url("/assets/images/home/home-banner-1600x680.png");
   background-size: cover;
 }
 
 .navbar-area > a {
-  font-size: 30px;
+  margin-top: 2em;
   text-decoration: none;
   color: #FFFFFF;
+  text-align: center;
+  font-size: medium;
+}
+
+div > i {
+  margin-top: 1.3em;
 }
 
 .carousel-area {
+  background-color: #f1f5f8;
   grid-area: carousel-area;
 }
 
 .categories-area {
+  background-color: #f1f5f8;
   grid-area: categories-area;
 }
 

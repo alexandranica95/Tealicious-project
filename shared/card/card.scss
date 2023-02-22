@@ -8,9 +8,9 @@
     min-height: 20em;
     grid-template-rows: 75% 25%;
     border-radius: 1em;
-    box-shadow: 0.5px 3px 4px $light-grey;
+    box-shadow: 0.5px 3px 15px $dark-grey;
     cursor: pointer; 
-    
+    background-color: $white;
     & > img {
       border-radius: inherit;
     }
@@ -41,18 +41,42 @@ img{
   font-weight: 600;
   padding-left: 1em;
   text-align: left;
+  font-size: larger;
 }
 
 .price{
-  font-weight: 600;
-  font-size: larger;
+  font-weight: 700;
+  font-size: x-large;
   text-align: right;
-  color: $darkgrey;
+  color: $verydark-grey;
 }
 
 .description{
-  color: $verydarkgrey;
+  color: $verydark-grey;
   padding-left: 1em;
   text-align: left;
   font-size: small;
+}
+
+.sticky-labels{
+  position: absolute;
+  height: 2em;
+  width: fit-content;
+  margin-top: -1.25em;
+  margin-left: 0.5em;
+  display: grid;
+  grid-template-columns: 5em 5em;
+  grid-gap: 0.25em;
+}
+
+.label-ceai-negru{
+  content: url("/assets/images/categorypage/ceai-negru-label.png");
+    object-fit: cover;
+    width: 90%;
+}
+
+.label-ceai-verde{
+  content: url("/assets/images/categorypage/ceai-verde-label.png");
+    object-fit: cover;
+    width: 90%;
 }

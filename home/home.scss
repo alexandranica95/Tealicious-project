@@ -12,20 +12,22 @@
     'categories-area'
     'footer-area';
 
-    grid-template-rows: 70% 60% 50% 20%;
+    grid-template-rows: 50% 60% 50% 20%;
     min-height: 100vh
 }
 
 .logo-area {
-    position: relative;
-    top: 0;
-    left: 0;
+    display: grid;
+    background-size: 75%;
+    margin-top: 1.3em;
+    background-repeat: no-repeat;
+    background-image: url("/assets/images/home/logo-456x174.png");
 }
 .image1 {
     position: relative;
     top: 0;
     left: 0;
-    border: 1px solid $light-orange;
+    border: 1px solid $dark-grey;
   }
   
   .image2 {
@@ -38,23 +40,31 @@
 .navbar-area{
     display: grid;
     grid-area: navbar-area;
-    grid-template-columns: 20% 20% 20% 20% 20% ;
+    grid-template-columns: 14.28% 14.28% 14.28% 14.28% 14.28% 14.28% 14.28% ;
     justify-content: center;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("/assets/images/Background-home-page.jpg");
+    background-image: linear-gradient(rgba(13, 12, 12, 0.495), rgba(80, 80, 80, 0.591)), url("/assets/images/home/home-banner-1600x680.png");
     background-size: cover;
 }
 
 .navbar-area > a {
-    font-size: 30px;
+    margin-top: 2em;
     text-decoration: none; 
-     color: $white;
+    color: $white;
+    text-align: center;
+    font-size: medium;
+    text-align: ;
 }
 
+div > i {
+    margin-top: 1.3em;
+}
 .carousel-area{
+    background-color: $light-grey;
     grid-area: carousel-area;
 }
 
 .categories-area{
+    background-color: $light-grey;
     grid-area: categories-area;
 }
 

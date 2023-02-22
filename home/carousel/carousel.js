@@ -24,6 +24,7 @@ const productsWrapper = document.querySelector(".bar-container")
 const bubbleTeaProducts = Array.from(document.querySelector(".wrapper").children);
 const mapElement = document.querySelector(".map");
 
+
 productsWrapper.addEventListener("click", e => {
   Array.from(productsWrapper.children).forEach(item => item.classList.remove("focus"));
   e.target.classList.add("focus");
@@ -49,9 +50,3 @@ productsWrapper.addEventListener("click", e => {
 })
 
 
-const b1 = document.querySelector(".b1");
-const i1 = document.querySelector(".i1");
-
-b1.addEventListener("click", e => {
-  console.log(i1.value)
-});

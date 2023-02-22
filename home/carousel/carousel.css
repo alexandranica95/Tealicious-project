@@ -69,22 +69,22 @@
   grid-template-columns: 33.33% 33.33% 33.33%;
   height: 100%;
   text-align: center;
-  margin-bottom: 5%;
+  margin-bottom: 4%;
 }
 
 .bar-container > div {
-  font-family: "Poppins", sans-serif;
-  box-shadow: 0.5px 1px 5px #fee8dc;
+  font-family: "Manrope", sans-serif;
+  box-shadow: 0.5px 1px 5px #d1d1d1;
   padding-top: 2%;
   font-size: 160%;
 }
 
 .bar-container > div:hover {
-  background-color: #fbcdb4;
+  background-color: #d1d1d1;
 }
 
 .focus {
-  background-color: #fbcdb4;
+  background-color: #F1C617;
 }
 
 .display-none {
