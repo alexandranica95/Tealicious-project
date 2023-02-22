@@ -57,7 +57,7 @@
     margin-top: 1em;
     & > button {
       all: unset;
-      background: $light-salmon;
+      background: $yellow;
       cursor: pointer;
       margin: 0 0.125em;
       position: relative;
@@ -71,7 +71,7 @@
           position: absolute;
           transform: translate(-50%, -50%);
           top: 50%;
-          @include circle(0.5em);
+          @include circle(0.4em);
         }
       }
     }
@@ -82,14 +82,16 @@ display: grid;
 grid-template-columns: 33.33% 33.33% 33.33% ;
 height: 100%;
 text-align: center;
-margin-bottom: 4%;
+padding-bottom: 6%;
 }
 
 .bar-container > div {
+border-radius: 6px;
 font-family: $font, sans-serif;
 box-shadow: 0.5px 1px 5px $dark-grey;
-padding-top: 2%;
-font-size: 160%;
+font-size: 140%;
+min-height: 2em;
+padding-top: 0.5em;
 }
 
 .bar-container > div:hover{

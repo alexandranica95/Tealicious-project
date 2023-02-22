@@ -18,8 +18,9 @@
 
 .logo-area {
     display: grid;
-    background-size: 75%;
-    margin-top: 1.3em;
+    margin-right: 5em ;
+    background-size: 80%;
+    margin-top: 1.5em;
     background-repeat: no-repeat;
     background-image: url("/assets/images/home/logo-456x174.png");
 }
@@ -40,10 +41,12 @@
 .navbar-area{
     display: grid;
     grid-area: navbar-area;
-    grid-template-columns: 14.28% 14.28% 14.28% 14.28% 14.28% 14.28% 14.28% ;
+    grid-template-columns: 5% 28% 10% 6% 14.28% 5% 5% ;
     justify-content: center;
     background-image: linear-gradient(rgba(13, 12, 12, 0.495), rgba(80, 80, 80, 0.591)), url("/assets/images/home/home-banner-1600x680.png");
     background-size: cover;
+    border-radius: 6px;
+    
 }
 
 .navbar-area > a {
@@ -51,12 +54,11 @@
     text-decoration: none; 
     color: $white;
     text-align: center;
-    font-size: medium;
-    text-align: ;
+    font-size: 20px;
 }
 
-div > i {
-    margin-top: 1.3em;
+a > i {
+    margin-top: 0.5em;
 }
 .carousel-area{
     background-color: $light-grey;
