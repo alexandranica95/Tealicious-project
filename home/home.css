@@ -9,61 +9,118 @@ body {
   height: 100%;
 }
 
-.wrapper {
-  display: flex;
-  grid-gap: 2.6em;
-  overflow: hidden;
-  width: 60em;
+* {
+  color: #000000;
+  font-family: "Manrope", sans-serif;
 }
-.wrapper > .bubble-tea-products, .wrapper .new-arrivals-products {
-  display: flex;
-  grid-gap: 2.6em;
-  transition: all 1s ease-in-out;
-  height: 85%;
+
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.card {
+  padding: 0.3em;
+  display: grid;
+  max-height: 25em;
+  min-height: 20em;
+  grid-template-rows: 75% 25%;
+  border-radius: 1em;
+  box-shadow: 0.5px 3px 15px #d1d1d1;
+  cursor: pointer;
+  background-color: #FFFFFF;
+}
+.card > img {
+  border-radius: inherit;
+}
+.card > .content {
+  display: grid;
+  background: #FFFFFF;
+  border-bottom-left-radius: inherit;
+  border-bottom-right-radius: inherit;
+  text-align: center;
+}
+
+img {
+  content: url("/assets/images/categorypage/greenapple.jpg");
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 99%;
+}
+
+.title-container {
+  padding-top: 1.5em;
+  display: grid;
+  grid-template-columns: 60% 25%;
+}
+
+.title {
+  font-weight: 600;
+  padding-left: 1em;
+  text-align: left;
+  font-size: larger;
+}
+
+.price {
+  font-weight: 700;
+  font-size: x-large;
+  text-align: right;
+  color: #8A8989;
+}
+
+.description {
+  color: #8A8989;
+  padding-left: 1em;
+  text-align: left;
+  font-size: small;
+}
+
+.sticky-labels {
+  position: absolute;
+  height: 2em;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-top: -1.25em;
+  margin-left: 0.5em;
+  display: grid;
+  grid-template-columns: 5em 5em;
+  grid-gap: 0.25em;
+}
+
+.label-ceai-negru {
+  content: url("/assets/images/categorypage/ceai-negru-label.png");
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 90%;
+}
+
+.label-ceai-verde {
+  content: url("/assets/images/categorypage/ceai-verde-label.png");
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 90%;
 }
 
 .center {
-  height: 60%;
   align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
-.card {
-  border-radius: 3em;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-}
 .card > img {
-  border-top-right-radius: inherit;
-  border-top-left-radius: inherit;
   display: block;
   width: 17.5em;
 }
-.card > .content {
-  background-color: #FFFFFF;
-  border-bottom-left-radius: inherit;
-  border-bottom-right-radius: inherit;
-  padding: 1em;
-  text-align: center;
-}
-.card > .content > h1, .card > .content > h3 {
-  margin: 0.35em 0;
-}
-.card > .content > h1 {
-  color: black;
-  font-size: 1.25rem;
-  line-height: 1;
-}
-.card > .content > h3 {
-  color: black;
-  font-size: 0.9rem;
-  font-weight: 300;
+
+.sticky-labels {
+  display: none;
 }
 
-.map {
-  margin-top: 1em;
-}
 .map > button {
   all: unset;
   background: #F1C617;
@@ -100,6 +157,7 @@ body {
   border-radius: 6px;
   font-family: "Manrope", sans-serif;
   box-shadow: 0.5px 1px 5px #d1d1d1;
+  box-shadow: inset 0.5px 3px 10px #d1d1d1;
   font-size: 140%;
   min-height: 2em;
   padding-top: 0.5em;
@@ -115,6 +173,23 @@ body {
 
 .display-none {
   display: none !important;
+}
+
+.bubble-tea-products {
+  height: 28em;
+  width: 70em;
+}
+
+.wrapper-carousel {
+  display: flex;
+  grid-gap: 2.6em;
+  overflow: hidden;
+  width: 61em;
+}
+.wrapper-carousel > .bubble-tea-products, .wrapper-carousel .new-arrivals-products {
+  display: flex;
+  grid-gap: 2.6em;
+  transition: all 1s ease-in-out;
 }
 
 .center {
@@ -136,29 +211,32 @@ body {
   transition: all 1s ease-in-out;
 }
 
-.card {
-  height: 100.1%;
+.category-card {
+  height: -moz-fit-content;
+  height: fit-content;
   border-radius: 1em;
-  box-shadow: 0.5px 2px 4px #aea097;
+  box-shadow: 0.5px 1px 5px #d1d1d1;
   cursor: pointer;
 }
-.card > img {
+.category-card > img {
   border-top-right-radius: inherit;
   border-top-left-radius: inherit;
   display: block;
   width: 17.5em;
+  height: -moz-fit-content;
+  height: fit-content;
 }
-.card > .content {
+.category-card > .category-content {
   background: #FFFFFF;
   border-bottom-left-radius: inherit;
   border-bottom-right-radius: inherit;
   padding: 1em;
   text-align: center;
 }
-.card > .content > h1 {
+.category-card > .category-content > h1 {
   margin: 0.35em 0;
 }
-.card > .content > h1 {
+.category-card > .category-content > h1 {
   color: #000000;
   font-size: 1.25rem;
   line-height: 1;
@@ -176,19 +254,57 @@ body {
   content: url("/assets/images/home/waffles.jpg");
 }
 
-.footer-component {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("/assets/images/Background-home-page.jpg");
-  background-size: cover;
-  width: 100%;
-  height: 100%;
-  display: grid;
-  grid-template-rows: 25% 25% 25% 25%;
-  text-align: left;
-  font-size: 125%;
+.category-wrapper {
+  display: flex;
+  grid-gap: 2.6em;
+  overflow: hidden;
+  width: 60em;
+}
+.category-wrapper > .bubble-tea-products, .category-wrapper .new-arrivals-products {
+  display: flex;
+  grid-gap: 2.6em;
+  transition: all 1s ease-in-out;
 }
 
-.footer-component > div, i {
+ul > li {
   color: #FFFFFF;
+}
+
+.footer {
+  background-image: linear-gradient(rgba(13, 12, 12, 0.495), rgba(43, 43, 43, 0.799)), url("/assets/images/Background-home-page.jpg");
+  background-size: cover;
+  margin-top: 45px;
+  padding: 60px 0;
+  color: #FFFFFF;
+  text-align: center;
+}
+.footer footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer nav {
+  margin: 30px 0;
+}
+.footer nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.footer .social {
+  width: 100%;
+}
+.footer .social ul {
+  margin: 0 auto;
+  width: 140px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .grid-container {
@@ -224,11 +340,11 @@ body {
 .navbar-area {
   display: grid;
   grid-area: navbar-area;
-  grid-template-columns: 5% 28% 10% 6% 14.28% 5% 5%;
-  justify-content: center;
+  grid-template-columns: 4% 17% 10% 6% 50% 5% 5%;
   background-image: linear-gradient(rgba(13, 12, 12, 0.495), rgba(80, 80, 80, 0.591)), url("/assets/images/home/home-banner-1600x680.png");
   background-size: cover;
   border-radius: 6px;
+  background-repeat: no-repeat;
 }
 
 .navbar-area > a {

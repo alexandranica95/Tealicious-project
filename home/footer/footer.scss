@@ -1,16 +1,46 @@
 @import '../../variables.scss';
 
-.footer-component {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("/assets/images/Background-home-page.jpg");
+ ul > li {
+  color:$white;
+ }
+
+.footer{
+  background-image: linear-gradient(rgba(13, 12, 12, 0.495), rgba(43, 43, 43, 0.799)), url("/assets/images/Background-home-page.jpg");
   background-size: cover;
-  width: 100%;
-  height: 100%;
-  display: grid;
-  grid-template-rows: 25% 25% 25% 25%;
-  text-align: left;
-  font-size: 125%;
+  margin-top: $lgSpacing;
+  padding: $xlSpacing 0;
+  color: $white;
+  text-align: center;
+
+  footer{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
   }
 
-  .footer-component > div, i {
-    color:$white;
+  ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
   }
+
+  nav{
+      margin: $mdSpacing 0;
+      ul{
+          display: flex;
+          flex-direction: column;
+          gap: $baseSpacing;
+      }
+  }
+
+  .social{
+     width: 100%;
+      ul {
+          margin: 0 auto;
+          width: 140px;
+          display: flex;
+          justify-content: space-between;
+      }
+  }
+}
