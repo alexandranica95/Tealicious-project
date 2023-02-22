@@ -1,22 +1,31 @@
 @import '../../variables.scss';
 
- ul > li {
+ ul > li, p {
   color:$white;
  }
+
+ li > i{
+  color:$white;
+ }
+
+a {
+  background-image: url("/assets/images/home/logo-456x174.png");
+  background-size: 20%;
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
 
 .footer{
   background-image: linear-gradient(rgba(13, 12, 12, 0.495), rgba(43, 43, 43, 0.799)), url("/assets/images/Background-home-page.jpg");
   background-size: cover;
-  margin-top: $lgSpacing;
-  padding: $xlSpacing 0;
+  padding: $xlSpacing;
   color: $white;
   text-align: center;
 
   footer{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
   }
 
   ul {
@@ -31,6 +40,7 @@
           display: flex;
           flex-direction: column;
           gap: $baseSpacing;
+          justify-content: center;
       }
   }
 
@@ -44,3 +54,4 @@
       }
   }
 }
+
