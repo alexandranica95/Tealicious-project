@@ -319,7 +319,7 @@ li > i {
 .grid-container {
   display: grid;
   grid-template-areas: "navbar-area" "carousel-area" "categories-area" "footer-area";
-  grid-template-rows: 45% 45% 35% 20%;
+  grid-template-rows: 40% 45% 35% 20%;
   min-height: 100vh;
 }
 
@@ -330,12 +330,13 @@ li > i {
   margin-top: 1.5em;
   background-repeat: no-repeat;
   background-image: url("/assets/images/home/logo-456x174.png");
+  cursor: pointer;
 }
 
 .navbar-area {
   display: grid;
   grid-area: navbar-area;
-  grid-template-columns: 4% 17% 10% 6% 50% 5% 5%;
+  grid-template-columns: 3% 17% 10% 6% 45% 5% 7%;
   background-image: linear-gradient(rgba(13, 12, 12, 0.495), rgba(80, 80, 80, 0.591)), url("/assets/images/home/home-banner-1600x680.png");
   background-size: cover;
   border-radius: 6px;
@@ -347,7 +348,7 @@ li > i {
   text-decoration: none;
   color: #FFFFFF;
   text-align: center;
-  font-size: 20px;
+  font-size: 15px;
 }
 
 a > i {
