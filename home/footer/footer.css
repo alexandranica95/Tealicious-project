@@ -6,9 +6,9 @@ li > i {
   color: #FFFFFF;
 }
 
-a {
+.logo-footer {
   background-image: url("/assets/images/home/logo-456x174.png");
-  background-size: 20%;
+  background-size: 30%;
   background-repeat: no-repeat;
   background-position: 50%;
 }
@@ -16,8 +16,6 @@ a {
 .footer {
   background-image: linear-gradient(rgba(13, 12, 12, 0.495), rgba(43, 43, 43, 0.799)), url("/assets/images/Background-home-page.jpg");
   background-size: cover;
-  padding: 60px;
-  color: #FFFFFF;
   text-align: center;
 }
 .footer footer {
@@ -36,7 +34,8 @@ a {
 .footer nav ul {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 1.5em;
+  margin-top: 6%;
   justify-content: center;
 }
 .footer .social {

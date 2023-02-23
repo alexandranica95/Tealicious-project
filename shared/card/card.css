@@ -9,19 +9,6 @@ body {
   height: 100%;
 }
 
-.wrapper {
-  display: flex;
-  grid-gap: 2.6em;
-  overflow: hidden;
-  width: 60em;
-}
-.wrapper > .bubble-tea-products, .wrapper .new-arrivals-products {
-  display: flex;
-  grid-gap: 2.6em;
-  transition: all 1s ease-in-out;
-  height: 85%;
-}
-
 .card {
   padding: 0.3em;
   display: grid;

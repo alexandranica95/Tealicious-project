@@ -12,7 +12,7 @@
     'categories-area'
     'footer-area';
 
-    grid-template-rows: 50% 60% 50% 20%;
+    grid-template-rows: 45% 45% 35% 20%;
     min-height: 100vh
 }
 
@@ -24,19 +24,6 @@
     background-repeat: no-repeat;
     background-image: url("/assets/images/home/logo-456x174.png");
 }
-.image1 {
-    position: relative;
-    top: 0;
-    left: 0;
-    border: 1px solid $dark-grey;
-  }
-  
-  .image2 {
-    position: absolute;
-    top: 50px;
-    left: 30px;
-    border: 1px solid $white;
-  }
 
 .navbar-area{
     display: grid;
@@ -58,6 +45,7 @@
 
 a > i {
     margin-top: 0.5em;
+    color: $white;
 }
 .carousel-area{
     background-color: $light-grey;
