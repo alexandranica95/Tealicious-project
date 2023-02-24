@@ -1,0 +1,103 @@
+@import '../variables.scss';
+
+*{box-sizing:border-box;}
+
+.log-form {
+  border-radius: 8px;
+  width: 40%;
+  min-width: 320px;
+  max-width: 475px;
+  background: $white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -o-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+
+  box-shadow: 0.5px 1px 10px $dark-grey;
+  
+  @media(max-width: 40em){
+    width: 95%;
+    position: relative;
+    margin: 2.5% auto 0 auto;
+    left: 0%;
+  -webkit-transform: translate(0%,0%);
+-moz-transform: translate(0%,0%);
+-o-transform: translate(0%,0%);
+-ms-transform: translate(0%,0%);
+transform: translate(0%,0%);
+  }
+  
+  form {
+    
+    display: block;
+    width: 100%;
+    padding: 2em;
+  }
+  
+  h2 {
+    width: 100%;
+    color: $white;
+    font-size: 1.35em;
+    display: block;
+    background: $verydark-grey;
+    width: 100%;
+    padding: .75em 1em .75em 1.5em;
+    margin: 0;
+    font-weight: 200;
+  }
+  
+  input {
+    display: block;
+    margin: auto auto;
+    width: 100%;
+    margin-bottom: 2em;
+    padding: .5em 0;
+    border: none;
+    border-bottom: 1px solid $dark-grey ;
+    padding-bottom: 1.25em;
+    color: $dark-grey;
+    &:focus {
+      outline: none;
+    }
+  }
+  
+  .btn {
+    border-radius: 8px;
+    display: inline-block;
+    background: $dark-grey;
+    padding: .5em 2em;
+    color: $white;
+    
+    &:hover {
+      background: lighten ($dark-grey, 5%);
+    }
+    &:active {
+      background: $dark-grey; 
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+  
+  .forgot {
+    color: lighten($black, 10%);
+    line-height: .5em;
+    position: relative;
+    top: 2.5em;
+    text-decoration: none;
+    font-size: .75em;
+    margin:0;
+    padding: 0;
+    float: right;
+    
+    &:hover {
+      color:darken($verydark-grey, 5%);
+    }
+
+  }
+  
+}
