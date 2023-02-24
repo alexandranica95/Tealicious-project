@@ -26,10 +26,26 @@
     cursor: pointer;
 }
 
+ //buy button banner
+.buy-button-container{
+    display: grid;
+    grid-template-rows: 50% 50%;
+}
+
+    .buy-button > button{
+        border-radius: 6px;
+        font-family: $font, sans-serif;
+        box-shadow: 1px 2px 10px $yellow;
+        font-size: 170%;
+        width: 6em;
+        min-height: 2em;
+}
+//
+
 .navbar-area{
     display: grid;
     grid-area: navbar-area;
-    grid-template-columns: 3% 17% 10% 6% 45% 5% 7% ;
+    grid-template-columns: 3% 17% 10% 10% 6% 15% 5% 20%;
     background-image: linear-gradient(rgba(13, 12, 12, 0.495), rgba(80, 80, 80, 0.591)), url("/assets/images/home/home-banner-1600x680.png");
     background-size: cover;
     border-radius: 6px;
@@ -46,8 +62,13 @@
 
 a > i {
     margin-top: 0.5em;
-    color: $white;
-}
+    color: $white;}
+
+//pop-up cart
+     
+//pop-up cart
+
+//carousel area
 .carousel-area{
     background-color: $light-grey;
     grid-area: carousel-area;
