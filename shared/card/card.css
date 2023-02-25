@@ -1,0 +1,93 @@
+* {
+  color: #000000;
+  font-family: "Manrope", sans-serif;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.card {
+  padding: 0.3em;
+  display: grid;
+  max-height: 25em;
+  min-height: 20em;
+  grid-template-rows: 75% 25%;
+  border-radius: 1em;
+  box-shadow: 0.5px 3px 15px #d1d1d1;
+  cursor: pointer;
+  background-color: #FFFFFF;
+}
+.card > img {
+  border-radius: inherit;
+}
+.card > .content {
+  display: grid;
+  background: #FFFFFF;
+  border-bottom-left-radius: inherit;
+  border-bottom-right-radius: inherit;
+  text-align: center;
+}
+
+img {
+  content: url("/assets/images/categorypage/greenapple.jpg");
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 99%;
+}
+
+.title-container {
+  padding-top: 1.5em;
+  display: grid;
+  grid-template-columns: 60% 25%;
+}
+
+.title {
+  font-weight: 600;
+  padding-left: 1em;
+  text-align: left;
+  font-size: larger;
+}
+
+.price {
+  font-weight: 700;
+  font-size: x-large;
+  text-align: right;
+  color: #8A8989;
+}
+
+.description {
+  color: #8A8989;
+  padding-left: 1em;
+  text-align: left;
+  font-size: small;
+}
+
+.sticky-labels {
+  position: absolute;
+  height: 2em;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-top: -1.25em;
+  margin-left: 0.5em;
+  display: grid;
+  grid-template-columns: 5em 5em;
+  grid-gap: 0.25em;
+}
+
+.label-ceai-negru {
+  content: url("/assets/images/categorypage/ceai-negru-label.png");
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 90%;
+}
+
+.label-ceai-verde {
+  content: url("/assets/images/categorypage/ceai-verde-label.png");
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 90%;
+}/*# sourceMappingURL=card.css.map */

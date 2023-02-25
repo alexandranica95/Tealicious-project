@@ -1,0 +1,194 @@
+* {
+  color: #000000;
+  font-family: "Manrope", sans-serif;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.card {
+  padding: 0.3em;
+  display: grid;
+  max-height: 25em;
+  min-height: 20em;
+  grid-template-rows: 75% 25%;
+  border-radius: 1em;
+  box-shadow: 0.5px 3px 15px #d1d1d1;
+  cursor: pointer;
+  background-color: #FFFFFF;
+}
+.card > img {
+  border-radius: inherit;
+}
+.card > .content {
+  display: grid;
+  background: #FFFFFF;
+  border-bottom-left-radius: inherit;
+  border-bottom-right-radius: inherit;
+  text-align: center;
+}
+
+img {
+  content: url("/assets/images/categorypage/greenapple.jpg");
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 99%;
+}
+
+.title-container {
+  padding-top: 1.5em;
+  display: grid;
+  grid-template-columns: 60% 25%;
+}
+
+.title {
+  font-weight: 600;
+  padding-left: 1em;
+  text-align: left;
+  font-size: larger;
+}
+
+.price {
+  font-weight: 700;
+  font-size: x-large;
+  text-align: right;
+  color: #8A8989;
+}
+
+.description {
+  color: #8A8989;
+  padding-left: 1em;
+  text-align: left;
+  font-size: small;
+}
+
+.sticky-labels {
+  position: absolute;
+  height: 2em;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-top: -1.25em;
+  margin-left: 0.5em;
+  display: grid;
+  grid-template-columns: 5em 5em;
+  grid-gap: 0.25em;
+}
+
+.label-ceai-negru {
+  content: url("/assets/images/categorypage/ceai-negru-label.png");
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 90%;
+}
+
+.label-ceai-verde {
+  content: url("/assets/images/categorypage/ceai-verde-label.png");
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 90%;
+}
+
+.wrap-container {
+  display: grid;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: #f1f5f8;
+}
+
+.category-container {
+  justify-content: center;
+  display: grid;
+  grid-template-columns: 15em 15em 15em;
+  grid-gap: 5em;
+  height: 15em;
+}
+
+.category-container > div {
+  margin: 0 auto;
+  position: relative;
+  background-size: 85%;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  width: 60%;
+  height: 75%;
+  border-radius: 15px;
+  background-color: #FFFFFF;
+  box-shadow: 0.5px 2px 25px #d1d1d1;
+  cursor: pointer;
+}
+
+.category-button > div {
+  margin: auto;
+  margin-top: 10%;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 8em;
+  width: 70%;
+}
+
+.category-button {
+  text-align: center;
+}
+
+.category-button > h5 {
+  justify-content: center;
+  margin-top: 0;
+}
+
+.tea-icon {
+  background-image: url(/assets/images/categorypage/bubble-tea.png);
+}
+
+.coffee-icon {
+  background-image: url(/assets/images/categorypage/coffee.png);
+}
+
+.waffle-icon {
+  background-image: url(/assets/images/categorypage/wafflEX.png);
+  margin-top: 0;
+}
+
+.subcategory-container {
+  display: grid;
+  grid-template-rows: 70%;
+  justify-content: center;
+  min-height: 8em;
+}
+
+select {
+  border-radius: 2em;
+  margin-top: 7%;
+  width: 300px;
+  padding: 5px;
+  border: none;
+  background-color: #FFFFFF;
+}
+
+.category-title {
+  display: grid;
+  grid-template-columns: 15.8% 15.8% 15.8% 15.8%;
+  font-weight: 400;
+  font-size: x-large;
+  justify-content: center;
+  grid-gap: 3em;
+  margin-bottom: 2em;
+}
+
+.fruit-tea-products, .milk-tea-products, .cheesecake-products {
+  display: grid;
+  grid-template-columns: 17% 17% 17% 17%;
+  grid-gap: 3em;
+  justify-content: center;
+}
+
+.products-container {
+  margin-top: 4%;
+  display: grid;
+  grid-gap: 7em;
+  height: -moz-fit-content;
+  height: fit-content;
+}/*# sourceMappingURL=products.css.map */

@@ -1,0 +1,79 @@
+* {
+  box-sizing: border-box;
+}
+
+.log-form {
+  border-radius: 8px;
+  width: 40%;
+  min-width: 320px;
+  max-width: 475px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: #FFFFFF;
+  border: 1px solid #d1d1d1;
+  transform: translate(-50%, -50%);
+  box-shadow: 0.5px 1px 10px #d1d1d1;
+}
+@media (max-width: 40em) {
+  .log-form {
+    width: 95%;
+    position: relative;
+    margin: 2.5% auto 0 auto;
+    left: 0%;
+    transform: translate(0%, 0%);
+  }
+}
+.log-form form {
+  border-radius: 8px;
+  display: block;
+  width: 100%;
+  padding: 2em;
+}
+.log-form h2 {
+  width: 100%;
+  color: #FFFFFF;
+  font-size: 1.35em;
+  display: block;
+  background: #8A8989;
+  width: 100%;
+  padding: 0.75em 1em 0.75em 1.5em;
+  margin: 0;
+  font-weight: 200;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+.log-form input {
+  display: block;
+  margin: auto auto;
+  width: 100%;
+  margin-bottom: 2em;
+  padding: 0.5em 0;
+  border: none;
+  border-bottom: 1px solid #d1d1d1;
+  padding-bottom: 1.25em;
+  color: #d1d1d1;
+}
+.log-form input:focus {
+  outline: none;
+}
+.log-form .btn {
+  background-color: #F1C617;
+  color: #FFFFFF;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 17px;
+}
+.log-form .btn:hover {
+  background: lighten #d1d1d1, 5%;
+}
+.log-form .btn:active {
+  background: #d1d1d1;
+}
+.log-form .btn:focus {
+  outline: none;
+}/*# sourceMappingURL=login.css.map */

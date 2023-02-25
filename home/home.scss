@@ -12,49 +12,70 @@
     'categories-area'
     'footer-area';
 
-    grid-template-rows: 70% 60% 50% 20%;
+    grid-template-rows: 40% 45% 35% 20%;
     min-height: 100vh
 }
 
 .logo-area {
-    position: relative;
-    top: 0;
-    left: 0;
+    display: grid;
+    margin-right: 5em ;
+    background-size: 80%;
+    margin-top: 1.5em;
+    background-repeat: no-repeat;
+    background-image: url("/assets/images/home/logo-456x174.png");
+    cursor: pointer;
 }
-.image1 {
-    position: relative;
-    top: 0;
-    left: 0;
-    border: 1px solid $light-orange;
-  }
-  
-  .image2 {
-    position: absolute;
-    top: 50px;
-    left: 30px;
-    border: 1px solid $white;
-  }
+
+ //buy button banner
+.buy-button-container{
+    display: grid;
+    grid-template-rows: 50% 50%;
+}
+
+    .buy-button > button{
+        border-radius: 6px;
+        font-family: $font, sans-serif;
+        box-shadow: 1px 2px 10px $yellow;
+        font-size: 170%;
+        width: 6em;
+        min-height: 2em;
+}
+//
 
 .navbar-area{
     display: grid;
     grid-area: navbar-area;
-    grid-template-columns: 20% 20% 20% 20% 20% ;
-    justify-content: center;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("/assets/images/Background-home-page.jpg");
+    grid-template-columns: 3% 17% 10% 10% 6% 15% 5% 20%;
+    background-image: linear-gradient(rgba(13, 12, 12, 0.495), rgba(80, 80, 80, 0.591)), url("/assets/images/home/home-banner-1600x680.png");
     background-size: cover;
+    border-radius: 6px;
+    background-repeat: no-repeat;
 }
 
 .navbar-area > a {
-    font-size: 30px;
+    margin-top: 2em;
     text-decoration: none; 
-     color: $white;
+    color: $white;
+    text-align: center;
+    font-size: 15px;
 }
 
+a > i {
+    margin-top: 0.5em;
+    color: $white;}
+
+//pop-up cart
+     
+//pop-up cart
+
+//carousel area
 .carousel-area{
+    background-color: $light-grey;
     grid-area: carousel-area;
 }
 
 .categories-area{
+    background-color: $light-grey;
     grid-area: categories-area;
 }
 

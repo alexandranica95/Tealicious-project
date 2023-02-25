@@ -1,6 +1,6 @@
-AddCarouselComponent();
-AddCategoryComponent();
-AddFooterComponent();
+ AddCarouselComponent();
+ AddCategoryComponent();
+ AddFooterComponent();
 
 function AddCarouselComponent() {
   import('./carousel/carousel.js')
@@ -35,4 +35,4 @@ function AddFooterComponent() {
     .then(data => {
       document.querySelector(".footer-area").innerHTML = data;
     });
-}
+  }

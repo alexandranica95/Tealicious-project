@@ -1,0 +1,106 @@
+@import '../variables.scss';
+@import '../shared/card/card.scss';
+
+.wrap-container{ 
+   display: grid;
+   width: fit-content;
+   background-color: $light-grey;
+}
+
+.category-container{
+     justify-content: center;
+     display: grid;
+     grid-template-columns: 15em 15em 15em;
+     grid-gap: 5em;
+     height: 15em;
+}
+
+.category-container > div  {
+     margin: 0 auto;
+     position: relative;
+     background-size: 85%;
+     background-position:50%;
+     background-repeat: no-repeat;
+     width: 60%;
+     height: 75%;
+     border-radius: 15px;
+     background-color: $white;
+     box-shadow: 0.5px 2px 25px $dark-grey;
+     cursor: pointer;
+}
+
+ .category-button > div{
+     margin:  auto;
+     margin-top: 10%;
+     background-size: 100%;
+     background-repeat: no-repeat;
+     height: 8em;
+     width:70%;
+ }
+
+ .category-button{
+     text-align: center;
+ }
+
+ .category-button > h5 {
+     justify-content: center;
+     margin-top: 0;
+ }
+
+
+.tea-icon {
+     background-image: url(/assets/images/categorypage/bubble-tea.png); 
+}
+
+.coffee-icon{
+     background-image: url(/assets/images/categorypage/coffee.png);
+}
+
+.waffle-icon{
+     background-image: url(/assets/images/categorypage/wafflEX.png);
+     margin-top: 0;
+}
+
+
+.subcategory-container{
+     display: grid;
+     grid-template-rows: 70%;
+     justify-content: center;
+     min-height: 8em;
+
+}
+
+select {
+     border-radius: 2em;
+     margin-top: 7%;
+     width: 300px;
+     padding: 5px;
+     border: none;
+     background-color: $white;
+}
+
+.category-title{
+     display: grid;
+     grid-template-columns: 15.8% 15.8% 15.8% 15.8%;
+     font-weight: 400;
+     font-size: x-large;
+     justify-content: center;
+     grid-gap: 3em;
+     margin-bottom: 2em;
+
+}
+
+.fruit-tea-products, .milk-tea-products, .cheesecake-products {
+     display: grid;
+     grid-template-columns: 17% 17% 17% 17%;
+     grid-gap: 3em;
+     justify-content: center;
+}
+
+.products-container{
+     margin-top: 4%;
+     display: grid;
+     grid-gap: 7em;
+     height: fit-content;
+}
+

@@ -1,4 +1,4 @@
-@import '../variables.scss';
+@import '../../variables.scss';
 
 .navbar-area{
     display: grid;
@@ -15,4 +15,8 @@
      color: $white;
      transform: scale(1.2);
     transition: all 1s ease-in-out;
+}
+
+a > i {
+    color: $white;
 }

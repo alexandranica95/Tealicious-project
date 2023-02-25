@@ -17,30 +17,33 @@
   transition: all 1s ease-in-out;
 }
 
-.card {
-  height: 100.1%;
+.category-card {
+  height: -moz-fit-content;
+  height: fit-content;
   border-radius: 1em;
-  box-shadow: 0.5px 2px 4px #aea097;
+  box-shadow: 0.5px 1px 5px #d1d1d1;
   cursor: pointer;
 }
-.card > img {
+.category-card > img {
   border-top-right-radius: inherit;
   border-top-left-radius: inherit;
   display: block;
   width: 17.5em;
+  height: -moz-fit-content;
+  height: fit-content;
 }
-.card > .content {
-  background: #fbcdb4;
+.category-card > .category-content {
+  background: #FFFFFF;
   border-bottom-left-radius: inherit;
   border-bottom-right-radius: inherit;
   padding: 1em;
   text-align: center;
 }
-.card > .content > h1 {
+.category-card > .category-content > h1 {
   margin: 0.35em 0;
 }
-.card > .content > h1 {
-  color: black;
+.category-card > .category-content > h1 {
+  color: #000000;
   font-size: 1.25rem;
   line-height: 1;
 }
@@ -55,4 +58,16 @@
 
 .img-waffles {
   content: url("/assets/images/home/waffles.jpg");
+}
+
+.category-wrapper {
+  display: flex;
+  grid-gap: 2.6em;
+  overflow: hidden;
+  width: 60em;
+}
+.category-wrapper > .bubble-tea-products, .category-wrapper .new-arrivals-products {
+  display: flex;
+  grid-gap: 2.6em;
+  transition: all 1s ease-in-out;
 }/*# sourceMappingURL=category.css.map */
