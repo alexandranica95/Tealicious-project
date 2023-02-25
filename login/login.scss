@@ -7,10 +7,11 @@
   width: 40%;
   min-width: 320px;
   max-width: 475px;
-  background: $white;
   position: absolute;
   top: 50%;
   left: 50%;
+  background-color: $white;
+  border: 1px solid $dark-grey; 
   -webkit-transform: translate(-50%,-50%);
   -moz-transform: translate(-50%,-50%);
   -o-transform: translate(-50%,-50%);
@@ -24,15 +25,15 @@
     position: relative;
     margin: 2.5% auto 0 auto;
     left: 0%;
-  -webkit-transform: translate(0%,0%);
--moz-transform: translate(0%,0%);
--o-transform: translate(0%,0%);
--ms-transform: translate(0%,0%);
-transform: translate(0%,0%);
+    -webkit-transform: translate(0%,0%);
+    -moz-transform: translate(0%,0%);
+    -o-transform: translate(0%,0%);
+    -ms-transform: translate(0%,0%);
+    transform: translate(0%,0%);
   }
   
   form {
-    
+    border-radius: 8px;
     display: block;
     width: 100%;
     padding: 2em;
@@ -48,6 +49,8 @@ transform: translate(0%,0%);
     padding: .75em 1em .75em 1.5em;
     margin: 0;
     font-weight: 200;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
   }
   
   input {
@@ -66,11 +69,15 @@ transform: translate(0%,0%);
   }
   
   .btn {
-    border-radius: 8px;
-    display: inline-block;
-    background: $dark-grey;
-    padding: .5em 2em;
+    background-color: $yellow;
     color: $white;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 17px;
     
     &:hover {
       background: lighten ($dark-grey, 5%);
@@ -82,22 +89,5 @@ transform: translate(0%,0%);
       outline: none;
     }
   }
-  
-  .forgot {
-    color: lighten($black, 10%);
-    line-height: .5em;
-    position: relative;
-    top: 2.5em;
-    text-decoration: none;
-    font-size: .75em;
-    margin:0;
-    padding: 0;
-    float: right;
-    
-    &:hover {
-      color:darken($verydark-grey, 5%);
-    }
-
-  }
-  
 }
+  

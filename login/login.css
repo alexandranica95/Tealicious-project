@@ -7,10 +7,11 @@
   width: 40%;
   min-width: 320px;
   max-width: 475px;
-  background: #FFFFFF;
   position: absolute;
   top: 50%;
   left: 50%;
+  background-color: #FFFFFF;
+  border: 1px solid #d1d1d1;
   transform: translate(-50%, -50%);
   box-shadow: 0.5px 1px 10px #d1d1d1;
 }
@@ -24,6 +25,7 @@
   }
 }
 .log-form form {
+  border-radius: 8px;
   display: block;
   width: 100%;
   padding: 2em;
@@ -38,6 +40,8 @@
   padding: 0.75em 1em 0.75em 1.5em;
   margin: 0;
   font-weight: 200;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 .log-form input {
   display: block;
@@ -54,11 +58,15 @@
   outline: none;
 }
 .log-form .btn {
-  border-radius: 8px;
-  display: inline-block;
-  background: #d1d1d1;
-  padding: 0.5em 2em;
+  background-color: #F1C617;
   color: #FFFFFF;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 17px;
 }
 .log-form .btn:hover {
   background: lighten #d1d1d1, 5%;
@@ -68,18 +76,4 @@
 }
 .log-form .btn:focus {
   outline: none;
-}
-.log-form .forgot {
-  color: #1a1a1a;
-  line-height: 0.5em;
-  position: relative;
-  top: 2.5em;
-  text-decoration: none;
-  font-size: 0.75em;
-  margin: 0;
-  padding: 0;
-  float: right;
-}
-.log-form .forgot:hover {
-  color: #7d7c7c;
 }/*# sourceMappingURL=login.css.map */
