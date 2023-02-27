@@ -316,21 +316,140 @@ li > i {
   justify-content: space-between;
 }
 
+.cart-container {
+  background: linear-gradient(to bottom right, #f1f5f8);
+  display: grid;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  width: 19em;
+}
+
+.cart-header {
+  display: flex;
+  margin: auto;
+  width: 85%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-heading {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.cart-items {
+  display: grid;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 25% 25% 15% 35%;
+  padding: 0.4em;
+}
+
+.cart-img {
+  width: 3.5em;
+  height: 3.5em;
+  border-radius: 8px;
+  padding-left: 2%;
+  content: url("/assets/images/categorypage/greenapple.jpg");
+}
+
+.horizontal-line {
+  background-color: #f1f5f8;
+  height: 0.2px;
+  width: 100%;
+}
+
+.first-line, .last-line {
+  background-color: #d1d1d1;
+}
+
+span {
+  cursor: pointer;
+}
+
+.minus, .plus {
+  height: 2em;
+  width: 2em;
+  background: #f1f5f8;
+  border-radius: 8px;
+  border: 4px solid #f1f5f8;
+  text-align: center;
+}
+
+input {
+  height: 17px;
+  width: 15px;
+  text-align: center;
+  font-size: 15px;
+  border: 1px solid #d1d1d1;
+  border-radius: 8px;
+  vertical-align: middle;
+}
+
+.cart-total {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.cart-total > .heading {
+  text-align: center;
+  height: -moz-fit-content;
+  height: fit-content;
+  -webkit-margin-before: 0.5em;
+          margin-block-start: 0.5em;
+  -webkit-margin-after: 0.5em;
+          margin-block-end: 0.5em;
+}
+
+.checkout-link:hover {
+  color: #F1C617;
+}
+
+.checkout-link {
+  text-decoration: none;
+  color: #000000;
+}
+
+.fa-angle-right {
+  color: #F1C617;
+  padding-left: 0.5em;
+}
+
+.badge:after {
+  content: attr(value);
+  font-size: 12px;
+  color: #000000;
+  background: #F1C617;
+  border-radius: 50%;
+  padding: 0 5px;
+  position: relative;
+  left: -8px;
+  top: -10px;
+  opacity: 1;
+}
+
 .grid-container {
   display: grid;
   grid-template-areas: "navbar-area" "carousel-area" "categories-area" "footer-area";
-  grid-template-rows: 40% 45% 35% 20%;
+  grid-template-rows: 30% 45% 35% 20%;
   min-height: 100vh;
 }
 
 .logo-area {
   display: grid;
   margin-right: 5em;
+  margin-top: 2em;
   background-size: 80%;
-  margin-top: 1.5em;
   background-repeat: no-repeat;
   background-image: url("/assets/images/home/logo-456x174.png");
   cursor: pointer;
+  height: 30em;
 }
 
 .buy-button-container {
@@ -348,17 +467,20 @@ li > i {
 }
 
 .navbar-area {
-  display: grid;
-  grid-area: navbar-area;
-  grid-template-columns: 3% 17% 10% 10% 6% 15% 5% 20%;
   background-image: linear-gradient(rgba(13, 12, 12, 0.495), rgba(80, 80, 80, 0.591)), url("/assets/images/home/home-banner-1600x680.png");
   background-size: cover;
-  border-radius: 6px;
   background-repeat: no-repeat;
 }
 
-.navbar-area > a {
-  margin-top: 2em;
+.navbar-container {
+  display: grid;
+  grid-area: navbar-area;
+  grid-template-columns: 3% 17% 10% 10% 10% 10% 25% 3% 3%;
+  border-radius: 6px;
+}
+
+.navbar-container > a, .navbar-container > .cart-wrapper {
+  margin-top: 4em;
   text-decoration: none;
   color: #FFFFFF;
   text-align: center;
@@ -382,4 +504,24 @@ a > i {
 
 .footer-area {
   grid-area: footer-area;
+}
+
+.cart-container {
+  position: absolute;
+  z-index: 1;
+  display: none;
+  margin-left: -5%;
+}
+
+.cart-wrapper:hover .cart-container {
+  display: block;
+}
+
+.products-number {
+  position: absolute;
+  z-index: 1;
+}
+
+.buy-button-container {
+  margin-left: 20%;
 }/*# sourceMappingURL=home.css.map */

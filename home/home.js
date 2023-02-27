@@ -1,6 +1,7 @@
  AddCarouselComponent();
  AddCategoryComponent();
- AddFooterComponent();
+ await AddFooterComponent();
+ await AddCartComponent();
 
 function AddCarouselComponent() {
   import('./carousel/carousel.js')
@@ -25,14 +26,21 @@ function AddCategoryComponent() {
     });
 }
 
-function AddFooterComponent() {
-  import('./footer/footer.js')
-  fetch("./footer/footer.html")
+async function AddFooterComponent() {
+  import('./footer/footer.js');
 
-    .then(response => {
-      return response.text();
-    })
-    .then(data => {
-      document.querySelector(".footer-area").innerHTML = data;
-    });
+  const response = await fetch("./footer/footer.html");
+  const text = await response.text();
+  document.querySelector(".footer-area").innerHTML = text;
   }
+
+
+async function AddCartComponent() {
+  import("./cart/cart.js");
+
+  const response = await fetch("./cart/cart.html");
+  const htmlText = await response.text();
+  
+  document.querySelector(".cart-wrapper").innerHTML += htmlText;
+}
+
