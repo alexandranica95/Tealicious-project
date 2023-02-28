@@ -3,6 +3,7 @@
 @import './carousel/carousel.scss';
 @import './categories/category.scss';
 @import './footer/footer.scss';
+@import './cart/cart.scss';
 
 .grid-container{
     display: grid;
@@ -12,18 +13,20 @@
     'categories-area'
     'footer-area';
 
-    grid-template-rows: 40% 45% 35% 20%;
+    grid-template-rows: 30% 45% 35% 20%;
     min-height: 100vh
 }
 
 .logo-area {
     display: grid;
     margin-right: 5em ;
+    margin-top: 2em;
     background-size: 80%;
-    margin-top: 1.5em;
     background-repeat: no-repeat;
     background-image: url("/assets/images/home/logo-456x174.png");
     cursor: pointer;
+    height: 30em;
+
 }
 
  //buy button banner
@@ -43,17 +46,20 @@
 //
 
 .navbar-area{
-    display: grid;
-    grid-area: navbar-area;
-    grid-template-columns: 3% 17% 10% 10% 6% 15% 5% 20%;
     background-image: linear-gradient(rgba(13, 12, 12, 0.495), rgba(80, 80, 80, 0.591)), url("/assets/images/home/home-banner-1600x680.png");
     background-size: cover;
-    border-radius: 6px;
     background-repeat: no-repeat;
 }
 
-.navbar-area > a {
-    margin-top: 2em;
+.navbar-container{
+    display: grid;
+    grid-area: navbar-area;
+    grid-template-columns: 3% 17% 10% 10% 10% 10% 25% 3% 3%;
+    border-radius: 6px;
+}
+
+.navbar-container > a, .navbar-container > .cart-wrapper {
+    margin-top: 4em;
     text-decoration: none; 
     color: $white;
     text-align: center;
@@ -82,3 +88,25 @@ a > i {
 .footer-area{
     grid-area: footer-area;
 }
+
+.cart-container{
+    position: absolute;
+    z-index: 1;
+    display: none;
+    margin-left: -5%
+
+}
+
+.cart-wrapper:hover .cart-container {
+    display: block;
+
+ }
+
+ .products-number{
+    position: absolute;
+    z-index: 1;
+ }
+
+ .buy-button-container{
+    margin-left: 20%;
+ }
