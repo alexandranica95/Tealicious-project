@@ -1,22 +1,38 @@
 @import '../../variables.scss';
+@import '../cart/cart.scss';
 
-.navbar-area{
+.cart-wrapper:hover  .cart-container {
+    display: block;
+ }
+ 
+
+
+.navbar-container{
     display: grid;
-    grid-area: navbar-area;
-    grid-template-columns: 20% 20% 20% 20% 20% ;
-    justify-content: center;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("/assets/images/Background21.jpg");
-    background-size: cover;
+    grid-template-columns: 3% 17% 10% 10% 10% 10% 25% 3% 3%;
+    height: 8em;
 }
 
-.navbar-area > a {
-    font-size: 30px;
+.navbar-container > a, .navbar-container > .cart-wrapper {
+    margin-top: 4em;
     text-decoration: none; 
-     color: $white;
-     transform: scale(1.2);
-    transition: all 1s ease-in-out;
+    color: $white;
+    text-align: center;
+    font-size: 15px;
 }
 
 a > i {
+    margin-top: 0.5em;
     color: $white;
+}
+
+
+.logo-area {
+    display: grid;
+    margin-right: 15% ;
+    margin-top: 10%;
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-image: url("/assets/images/home/logo-456x174.png");
+    cursor: pointer;
 }

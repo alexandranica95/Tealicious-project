@@ -1,13 +1,23 @@
 @import '../../variables.scss';
 
-.cart-container {
+
+.cart-container{
+    position: absolute;
+    z-index: 1;
+    display: none;
+    margin-left: -5%;
     background: linear-gradient(to bottom right, $light-grey);
-    display: grid;
     height: fit-content;
     background-color: $white;
     border-radius: 10px;
     width:16.5em;
-}   
+}
+
+
+ .products-number{
+    position: absolute;
+    z-index: 1;
+ }
 
 .cart-header{
     display: flex;

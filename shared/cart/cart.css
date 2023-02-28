@@ -1,11 +1,19 @@
 .cart-container {
+  position: absolute;
+  z-index: 1;
+  display: none;
+  margin-left: -5%;
   background: linear-gradient(to bottom right, #f1f5f8);
-  display: grid;
   height: -moz-fit-content;
   height: fit-content;
   background-color: #FFFFFF;
   border-radius: 10px;
   width: 16.5em;
+}
+
+.products-number {
+  position: absolute;
+  z-index: 1;
 }
 
 .cart-header {
