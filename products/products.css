@@ -92,11 +92,234 @@ img {
   width: 90%;
 }
 
+ul > li, p {
+  color: #FFFFFF;
+}
+
+li > i {
+  color: #FFFFFF;
+}
+
+.logo-footer {
+  background-image: url("/assets/images/home/logo-456x174.png");
+  background-size: 30%;
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+
+.footer {
+  background-image: linear-gradient(rgba(13, 12, 12, 0.495), rgba(43, 43, 43, 0.799)), url("/assets/images/Background-home-page.jpg");
+  background-size: cover;
+  text-align: center;
+}
+.footer footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+.footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer nav {
+  margin: 30px 0;
+}
+.footer nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  margin-top: 6%;
+  justify-content: center;
+}
+.footer .social {
+  width: 100%;
+}
+.footer .social ul {
+  margin: 0 auto;
+  width: 140px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart-container {
+  position: absolute;
+  z-index: 1;
+  display: none;
+  margin-left: -5%;
+  background: linear-gradient(to bottom right, #f1f5f8);
+  height: -moz-fit-content;
+  height: fit-content;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  width: 16.5em;
+}
+
+.products-number {
+  position: absolute;
+  z-index: 1;
+}
+
+.cart-header {
+  display: flex;
+  margin: auto;
+  width: 85%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-heading {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.cart-items {
+  display: grid;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 25% 25% 15% 35%;
+  padding: 0.4em;
+}
+
+.cart-img {
+  width: 3.5em;
+  height: 3.5em;
+  border-radius: 8px;
+  padding-left: 2%;
+  content: url("/assets/images/categorypage/greenapple.jpg");
+}
+
+.horizontal-line {
+  background-color: #f1f5f8;
+  height: 0.2px;
+  width: 100%;
+}
+
+.first-line, .last-line {
+  background-color: #d1d1d1;
+}
+
+span {
+  cursor: pointer;
+}
+
+.minus, .plus {
+  height: 2em;
+  width: 2em;
+  background: #f1f5f8;
+  border-radius: 8px;
+  border: 4px solid #f1f5f8;
+  text-align: center;
+}
+
+input {
+  height: 17px;
+  width: 15px;
+  text-align: center;
+  font-size: 15px;
+  border: 1px solid #d1d1d1;
+  border-radius: 8px;
+  vertical-align: middle;
+}
+
+.cart-total {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.cart-total > .heading {
+  text-align: center;
+  height: -moz-fit-content;
+  height: fit-content;
+  -webkit-margin-before: 0.5em;
+          margin-block-start: 0.5em;
+  -webkit-margin-after: 0.5em;
+          margin-block-end: 0.5em;
+}
+
+.checkout-link:hover {
+  color: #F1C617;
+}
+
+.checkout-link {
+  text-decoration: none;
+  color: #000000;
+}
+
+.fa-angle-right {
+  color: #F1C617;
+  padding-left: 0.5em;
+}
+
+.badge:after {
+  content: attr(value);
+  font-size: 12px;
+  color: #000000;
+  background: #F1C617;
+  border-radius: 50%;
+  padding: 0 5px;
+  position: relative;
+  left: -8px;
+  top: -10px;
+  opacity: 1;
+}
+
+.cart-wrapper:hover .cart-container {
+  display: block;
+}
+
+.navbar-container {
+  display: grid;
+  grid-template-columns: 3% 17% 10% 10% 10% 10% 25% 3% 3%;
+  height: 8em;
+}
+
+.navbar-container > a, .navbar-container > .cart-wrapper {
+  margin-top: 4em;
+  text-decoration: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 15px;
+}
+
+a > i {
+  margin-top: 0.5em;
+  color: #FFFFFF;
+}
+
+.logo-area {
+  display: grid;
+  margin-right: 15%;
+  margin-top: 10%;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-image: url("/assets/images/home/logo-456x174.png");
+  cursor: pointer;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas: "navbar-area" "carousel-area" "categories-area" "footer-area";
+}
+
+.navbar-area {
+  background-image: linear-gradient(rgba(13, 12, 12, 0.495), rgba(80, 80, 80, 0.591)), url("/assets/images/menu-banner-1600x680.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 40em;
+}
+
 .wrap-container {
   display: grid;
   width: -moz-fit-content;
   width: fit-content;
   background-color: #f1f5f8;
+  padding-top: 10em;
+  padding-bottom: 10em;
 }
 
 .category-container {

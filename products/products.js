@@ -1,25 +1,31 @@
-AddCardComponent();
+await AddComponent("../shared/footer/footer.js", "../shared/footer/footer.html", ".footer-area");
+await AddComponent("../shared/navbar/navbar.js", "../shared/navbar/navbar.html", ".navbar-area");
 
-function AddCardComponent() {
-  import('../shared/card/card.js')
+await AddCardComponent();
 
-  fetch("../shared/card/card.html")
-    .then(response => {
-      return response.text();
-    })
-    .then(data => {
+async function AddComponent(javascriptPath, htmlPath, querySelector) {
+  import(javascriptPath)
 
-        for (let i = 0; i < 8; i++){
-        document.querySelector(".fruit-tea-products").innerHTML += data;
-      }
+  const response = await fetch(htmlPath)
+  const htmlText = await response.text();
+  document.querySelector(querySelector).innerHTML += htmlText;
+ }
 
-      for (let i = 0; i < 6; i++){
-        document.querySelector(".milk-tea-products").innerHTML += data;
-      }
+async function AddCardComponent() {
+  import("../shared/card/card.js");
 
-      for (let i = 0; i < 10; i++){
-        document.querySelector(".cheesecake-products").innerHTML += data;
-      }
-      
-    });
+  const response = await fetch("../shared/card/card.html");
+  const htmlText = await response.text();
+
+  for (let i = 0; i < 8; i++){
+    document.querySelector(".fruit-tea-products").innerHTML += htmlText;
+  }
+
+  for (let i = 0; i < 6; i++){
+    document.querySelector(".milk-tea-products").innerHTML += htmlText;
+  }
+
+  for (let i = 0; i < 10; i++){
+    document.querySelector(".cheesecake-products").innerHTML += htmlText;
+  }
 }
