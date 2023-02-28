@@ -1,0 +1,48 @@
+@import '../variables.scss';
+
+* {box-sizing: border-box;}
+
+body{
+    background-color: $light-grey;
+    
+}
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid $dark-grey;
+  border-radius: 8px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+  border-radius: 8px;
+}
+
+input[type=tel]{
+  width: 100%;
+  padding: 12px;
+  border: 1px solid $dark-grey;
+  border-radius: 8px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: $yellow;
+  color: $white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: $dark-grey;
+}
+
+.container {
+  border-radius: 8px;
+  padding: 20px;
+}

@@ -1,18 +1,14 @@
- AddCarouselComponent();
+ await AddCarouselComponent();
  AddCategoryComponent();
  await AddFooterComponent();
  await AddCartComponent();
 
-function AddCarouselComponent() {
+async function AddCarouselComponent() {
   import('./carousel/carousel.js')
 
-  fetch("./carousel/carousel.html")
-    .then(response => {
-      return response.text();
-    })
-    .then(data => {
-      document.querySelector(".carousel-area").innerHTML = data;
-    });
+  const response = await fetch("./carousel/carousel.html")
+  const htmlText = await response.text();
+  document.querySelector(".carousel-area").innerHTML = htmlText;
 }
 
 function AddCategoryComponent() {
@@ -43,4 +39,5 @@ async function AddCartComponent() {
   
   document.querySelector(".cart-wrapper").innerHTML += htmlText;
 }
+
 

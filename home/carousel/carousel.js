@@ -1,7 +1,5 @@
 //waiting for html to load 
-setTimeout(function() {
-  carouselRun();
-}, 500);
+await carouselRun();
 
 //carousel automatic click with time
 // const buttonsWrapper = document.querySelector(".map");
@@ -13,9 +11,9 @@ setTimeout(function() {
 // }
 
 
-function carouselRun(){
+async function carouselRun(){
   //loads dynamically the Card Component
-  AddCardComponent();
+  await AddCardComponent();
 
   const buttonsWrapper = document.querySelector(".map");
   const slides = document.querySelector(".bubble-tea-products");
@@ -68,15 +66,13 @@ function carouselRun(){
   })
 }
 
-function AddCardComponent() {
+
+async function AddCardComponent() {
+  const response = await fetch("../../shared/card/card.html");
+  const data = await response.text();
+  for (let i = 0; i < 7; i++){
+    document.querySelector("#bubble-tea").innerHTML += data;
+  }
+
   import('../../shared/card/card.js')
-  fetch("../../shared/card/card.html")
-    .then(response => {
-      return response.text();
-    })
-    .then(data => {
-        for (let i = 0; i < 7; i++){
-        document.querySelector("#bubble-tea").innerHTML += data;
-      }
-    });
 }
