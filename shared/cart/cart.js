@@ -8,7 +8,7 @@ export function createCartElement(){
 
     const productName = document.createElement('div');
     productName.setAttribute ('class', 'cart-product-name');
-    productName.textContent = "Bubble Tea";
+    productName.textContent = "Cheeesecake red velvet";
     cartItem.appendChild(productName)
 
     const productPrice = document.createElement('div');

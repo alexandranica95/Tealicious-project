@@ -32,7 +32,6 @@ body {
 }
 
 img {
-  content: url("/assets/images/categorypage/greenapple.jpg");
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;

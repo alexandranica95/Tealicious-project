@@ -32,7 +32,6 @@ body {
 }
 
 img {
-  content: url("/assets/images/categorypage/greenapple.jpg");
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
@@ -64,6 +63,9 @@ img {
   padding-left: 1em;
   text-align: left;
   font-size: small;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .sticky-labels {

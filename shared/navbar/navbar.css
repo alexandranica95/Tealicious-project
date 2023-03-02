@@ -2,13 +2,13 @@
   position: absolute;
   z-index: 1;
   display: none;
-  margin-left: -5%;
+  margin-left: -8%;
   background: linear-gradient(to bottom right, #f1f5f8);
   height: -moz-fit-content;
   height: fit-content;
   background-color: #FFFFFF;
   border-radius: 10px;
-  width: 16.5em;
+  width: 20em;
 }
 
 .products-number {
@@ -37,7 +37,7 @@
 
 .cart-item {
   display: grid;
-  grid-template-columns: 25% 25% 15% 35%;
+  grid-template-columns: 20% 40% 10% 30%;
   padding: 0.4em;
 }
 
@@ -130,7 +130,7 @@ input {
 
 .navbar-container {
   display: grid;
-  grid-template-columns: 3% 17% 10% 10% 10% 10% 25% 3% 3%;
+  grid-template-columns: 3% 17% 10% 10% 10% 10% 20% 3% 3%;
   height: 8em;
 }
 
