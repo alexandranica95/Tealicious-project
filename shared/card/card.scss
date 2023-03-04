@@ -5,8 +5,8 @@
     padding: 0.3em;
     display: grid;
     max-height: 25em;
-    min-height: 20em;
-    grid-template-rows: 75% 25%;
+    min-height: 21em;
+    grid-template-rows: 70% 30%;
     border-radius: 1em;
     box-shadow: 0.5px 3px 15px $dark-grey;
     cursor: pointer; 
@@ -18,8 +18,6 @@
     & > .content {
       display: grid;
       background: $white;
-      border-bottom-left-radius: inherit;
-      border-bottom-right-radius: inherit;
       text-align: center;
     }
   }
@@ -31,21 +29,21 @@ img{
 }
   
 .title-container{
-  padding-top: 1.5em;
+  padding-top: 1.2em;
   display: grid;
-  grid-template-columns: 60% 25%;
+  grid-template-columns: 65% 18%;
 }
 
 .title{
-  font-weight: 600;
+  font-weight: 300;
   padding-left: 1em;
   text-align: left;
-  font-size: larger;
+  font-size: large;
 }
 
 .price{
-  font-weight: 700;
-  font-size: x-large;
+  font-weight: 300;
+  font-size: large;
   text-align: right;
   color: $verydark-grey;
 }
