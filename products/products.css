@@ -13,8 +13,8 @@ body {
   padding: 0.3em;
   display: grid;
   max-height: 25em;
-  min-height: 20em;
-  grid-template-rows: 75% 25%;
+  min-height: 21em;
+  grid-template-rows: 70% 30%;
   border-radius: 1em;
   box-shadow: 0.5px 3px 15px #d1d1d1;
   cursor: pointer;
@@ -26,8 +26,6 @@ body {
 .card > .content {
   display: grid;
   background: #FFFFFF;
-  border-bottom-left-radius: inherit;
-  border-bottom-right-radius: inherit;
   text-align: center;
 }
 
@@ -39,21 +37,21 @@ img {
 }
 
 .title-container {
-  padding-top: 1.5em;
+  padding-top: 1.2em;
   display: grid;
-  grid-template-columns: 60% 25%;
+  grid-template-columns: 65% 18%;
 }
 
 .title {
-  font-weight: 600;
+  font-weight: 300;
   padding-left: 1em;
   text-align: left;
-  font-size: larger;
+  font-size: large;
 }
 
 .price {
-  font-weight: 700;
-  font-size: x-large;
+  font-weight: 300;
+  font-size: large;
   text-align: right;
   color: #8A8989;
 }
@@ -65,6 +63,7 @@ img {
   font-size: small;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .sticky-labels {
@@ -316,8 +315,6 @@ a > i {
 
 .wrap-container {
   display: grid;
-  width: -moz-fit-content;
-  width: fit-content;
   background-color: #f1f5f8;
   padding-top: 10em;
   padding-bottom: 10em;
@@ -402,7 +399,7 @@ select {
   margin-bottom: 2em;
 }
 
-.fruit-tea-products, .milk-tea-products, .cheesecake-products {
+.fruit-tea-products, .milk-tea-products, .cheesecake-products, .coffee-products, .special-coffee-products, .waffle-products {
   display: grid;
   grid-template-columns: 17% 17% 17% 17%;
   grid-gap: 3em;

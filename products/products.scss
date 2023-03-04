@@ -21,7 +21,6 @@
 
 .wrap-container{ 
    display: grid;
-   width: fit-content;
    background-color: $light-grey;
    padding-top: 10em;
    padding-bottom: 10em;
@@ -110,7 +109,7 @@ select {
 
 }
 
-.fruit-tea-products, .milk-tea-products, .cheesecake-products {
+.fruit-tea-products, .milk-tea-products, .cheesecake-products, .coffee-products, .special-coffee-products, .waffle-products {
      display: grid;
      grid-template-columns: 17% 17% 17% 17%;
      grid-gap: 3em;
