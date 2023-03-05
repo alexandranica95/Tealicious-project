@@ -1,5 +1,7 @@
 
-@import '../variables.scss';
+@import '../../variables.scss';
+@import '../../base.scss';
+
 .left-side{background-color: none;
 }
 
@@ -7,9 +9,22 @@
 .product-page-container{
     display: grid;
     grid-template-columns: 60% 40%;
-    $font: "Manrope";
-    font-size: medium;
+    animation: 1s slide-left;
 }
+
+  // Added animation to modal popup//
+  @keyframes slide-left {
+    from {
+      margin-top: 100%;
+    }
+    to {
+      margin-top: 0%;
+    }
+  }
+  @keyframes fade-in {
+    from {opacity: 0} 
+    to {opacity: 1}
+  }
 
 .pop-up-content{
     border-bottom-left-radius: 32px;
@@ -158,11 +173,29 @@
     width: 250px;
     height: 54px;
     border-radius: 46px;
-    border-color:$yellow;
-    background-color: $white;
+    border-color:$yellow;   
+    background-color: $yellow;
+
 }
 
 .add-to-cart-btn:hover{
     font-weight: 700;
-    background-color: $yellow;
 }
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    -webkit-animation-name: fadeIn; /* Fade in the background */
+    -webkit-animation-duration: 0.4s;
+    animation-name: fadeIn;
+    animation-duration: 0.4s
+  }
