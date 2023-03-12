@@ -99,6 +99,7 @@ img {
   justify-content: center;
   height: -moz-fit-content;
   height: fit-content;
+  padding-top: 6em;
 }
 
 .card > img {
@@ -139,7 +140,6 @@ img {
   grid-template-columns: 33.33% 33.33% 33.33%;
   height: 100%;
   text-align: center;
-  padding-bottom: 6%;
 }
 
 .bar-container > div {

@@ -37,24 +37,27 @@ const productsWrapper = document.querySelector(".bar-container")
 const bubbleTeaProducts = Array.from(document.querySelector(".wrapper-carousel").children);
 const mapElement = document.querySelector(".map");
 
-productsWrapper?.addEventListener("click", e => {
-  Array.from(productsWrapper?.children).forEach(item => item.classList.remove("focus"));
-  e.target.classList.add("focus");
+productsWrapper.addEventListener("click", e => {
+  Array.from(productsWrapper.children).forEach(item => item.classList.remove("focus"));
+  
   if (e.target.classList.contains("first")) {
     bubbleTeaProducts[0].classList.remove("display-none")
     mapElement.classList.remove("display-none");
+    e.target.classList.add("focus");
 
     bubbleTeaProducts[1].classList.add("display-none")
     bubbleTeaProducts[2].classList.add("display-none")
   } else if (e.target.classList.contains("second")) {
     bubbleTeaProducts[1].classList.remove("display-none")
+    e.target.classList.add("focus");
 
     mapElement.classList.add("display-none");
     bubbleTeaProducts[0].classList.add("display-none")
     bubbleTeaProducts[2].classList.add("display-none")
   } else if (e.target.classList.contains('third')){
     bubbleTeaProducts[2].classList.remove("display-none")
-
+    e.target.classList.add("focus");
+    
     mapElement.classList.add("display-none");
     bubbleTeaProducts[0].classList.add("display-none")
     bubbleTeaProducts[1].classList.add("display-none")

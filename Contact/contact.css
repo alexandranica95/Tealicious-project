@@ -5,6 +5,9 @@
 body {
   background-color: #f1f5f8;
 }
+body h3 {
+  padding-left: 1em;
+}
 
 input[type=text], select, textarea {
   width: 100%;

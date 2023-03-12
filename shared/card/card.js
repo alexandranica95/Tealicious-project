@@ -10,8 +10,9 @@ setTimeout( function() {
     const arrayOfCards = Array.from(cardElements);
     arrayOfCards.forEach(cardElement => {
         cardElement.addEventListener("click", e => {
-            createCartElement();
-            window.localStorage.setItem('cart', JSON.stringify([{name: 'GreenApple', price: '19', count: 1}]));
+          //createCartElement();
+          //console.log(e)
+          window.localStorage.setItem('productId', e.currentTarget.id) //la click seteaza id ul nou
         });
     });
   }

@@ -92,6 +92,9 @@ async function AddSubcategoryProducts(products, productsSectionSelector) {
       cardElement.querySelector("img").src = productData.pictureUrl;
       cardElement.querySelector(".price").innerHTML = `${productData.price} lei`;
       cardElement.querySelector(".description").innerHTML = productData.description;
+      
+      //get product to detail page by id value
+      cardElement.setAttribute("id", productData.id);
   }
 }
 
@@ -242,15 +245,21 @@ function showWaffle() {
 }
 
 
-
 //click modal popup
-
 document.addEventListener('click', function(event) {
+  const modalContainerElement = document.getElementsByClassName("product-detail-modal")[0];
   const modalContentElement = document.getElementsByClassName("pop-up-content")[0];
+  const cardElements = Array.from(document.getElementsByClassName("card"));
+  
+  const cardsClicked = cardElements.filter(card => card.contains(event.target)).length;
+
   if (modalContentElement.contains(event.target)) {
 
-  } else {
-      const modalContainerElement = document.getElementsByClassName("product-detail-modal")[0];
-      modalContainerElement.style.display = "none";
+  }
+  else if(cardsClicked > 0 ) {
+      modalContainerElement.style.display = "block";
+  }
+  else{
+    modalContainerElement.style.display = "none";
   }
 });

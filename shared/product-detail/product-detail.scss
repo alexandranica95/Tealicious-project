@@ -10,15 +10,16 @@
     display: grid;
     grid-template-columns: 60% 40%;
     animation: 1s slide-left;
+    height: 100%;
 }
 
   // Added animation to modal popup//
   @keyframes slide-left {
     from {
-      margin-top: 100%;
+      margin-left: 100%;
     }
     to {
-      margin-top: 0%;
+      margin-left: 0%;
     }
   }
   @keyframes fade-in {
@@ -27,15 +28,23 @@
   }
 
 .pop-up-content{
+    display: grid;
     border-bottom-left-radius: 32px;
     border-top-left-radius: 32px;
     background-color: $light-grey;
+    grid-template-rows: 45% 20% 20% 10%;
+
+    > div {
+        padding-left: 2em;
+        padding-top: 2em;
+    }
 }
+
 
 //FIRST ROW
 .first-row{
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 15em 20em;
     height: 18em;  
 }
 
@@ -44,7 +53,6 @@
     justify-content: center;
     background-repeat: no-repeat;
     border-radius: 16px;
-
     & > img {
         width: 15em;
         height: 15em;
@@ -64,9 +72,15 @@
     padding-top: 24px;
     font-size: large;
 }
+
+.paragraph{
+    color: #626262;
+    font-size: medium;
+}
+
 .initial-price-container{
     display: grid;
-    grid-template-columns: 70% 30%;
+    grid-template-columns: 80% 10% 10%;
 }
 
 //SECOND ROW
@@ -78,7 +92,6 @@
 }
 
 .second-row > div {
-    padding: 5px 20px 20px 35px;
     font-size: medium;
 }
 
@@ -91,13 +104,16 @@
     font-weight: 600;
 }
 
+
+.focus{
+    background: $yellow;
+  }
+
 //THIRD ROW
 .third-row{
     height: 8em;
     display: grid;
     grid-template-rows: 40% 60%;
-    padding: 20px 20px 20px 35px;
-   
 }
 
 .extra-topping-container{
@@ -114,7 +130,6 @@
 
 //FOURTH ROW
 .fourth-row{
-    padding: 20px 20px 20px 33px;
     display: grid;
     grid-template-columns: 50% 50%;
     height: 4em;
@@ -127,7 +142,6 @@
 .btn-option{
     font-size: medium;
     height: 1.6em;
-    background: $white;
     border: 1px solid $yellow;
     border-radius: 8px; 
     color: #626262;
@@ -182,20 +196,6 @@
     font-weight: 700;
 }
 
-/* The Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    -webkit-animation-name: fadeIn; /* Fade in the background */
-    -webkit-animation-duration: 0.4s;
-    animation-name: fadeIn;
-    animation-duration: 0.4s
-  }
+.product-description{
+    padding-left: 2em;
+}
