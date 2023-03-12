@@ -174,20 +174,6 @@
       "isLimitedEdition": false
    },
    {
-      "id": "8f09d4e0-820a-4ad4-594a-6ba74d6f7900",
-      "title": "Kiwi Fruit Tea",
-      "description": "Ceai verde cu aromă de kiwi și topping inclus",
-      "price": 19,
-      "pictureUrl": "https://imagedelivery.net/ndMdV2i_hpRxQW13_KeE6g/8f09d4e0-820a-4ad4-594a-6ba74d6f7900/public",
-      "category": "bubbleTea",
-      "subcategory": "fruitTea",
-      "ingredients": ["greenTea"],
-      "isNewArrival": false,
-      "isBestSeller": false,
-      "isLimitedEdition": false
-   },
-
-   {
       "id": "83948068-88d6-48e7-b808-de11d18c3400",
       "title": "Lemon and Honey",
       "description": "Ceai verde cu aromă de lamaie și miere, topping inclus",

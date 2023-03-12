@@ -45,4 +45,7 @@ export async function getAllWaffleProducts(){
     return allProducts.filter(e => e.subcategory === "waffle");
 }
 
+export function getProductById(id){
+    return allProducts.find(e => e.id === id);
+}
 

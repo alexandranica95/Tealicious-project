@@ -2,6 +2,7 @@
 @import '../shared/card/card.scss';
 @import '../shared/footer/footer.scss';
 @import '../shared/navbar/navbar.scss';
+@import '../shared/product-detail/product-detail.scss';
 
 .grid-container{
      display: grid;
@@ -16,7 +17,7 @@
      background-image: linear-gradient(rgba(13, 12, 12, 0.495), rgba(80, 80, 80, 0.591)), url("/assets/images/menu-banner-1600x680.png");
      background-size: cover;
      background-repeat: no-repeat;
-     height: 40em;
+     height: 28em;
  }
 
 .wrap-container{ 
@@ -123,3 +124,17 @@ select {
      height: fit-content;
 }
 
+.product-detail-modal{
+     /* Stay in place */
+     z-index: 1; /* Sit on top */
+     width: 100%; /* Full width */
+     height: 100%; /* Full height */
+     overflow: auto; /* Enable scroll if needed */
+     position: fixed;
+     right: 0;  
+     top:0;
+     display: none;
+     background-color: rgb(0,0,0); /* Fallback color */
+     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+     animation: .5s fade-in;
+}

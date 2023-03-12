@@ -1,3 +1,14 @@
+* {
+  color: #000000;
+  font-family: "Manrope", sans-serif;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .left-side {
   background-color: none;
 }
@@ -5,18 +16,41 @@
 .product-page-container {
   display: grid;
   grid-template-columns: 60% 40%;
-  font-size: medium;
+  animation: 1s slide-left;
+  height: 100%;
 }
 
+@keyframes slide-left {
+  from {
+    margin-left: 100%;
+  }
+  to {
+    margin-left: 0%;
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .pop-up-content {
+  display: grid;
   border-bottom-left-radius: 32px;
   border-top-left-radius: 32px;
   background-color: #f1f5f8;
+  grid-template-rows: 45% 20% 20% 10%;
+}
+.pop-up-content > div {
+  padding-left: 2em;
+  padding-top: 2em;
 }
 
 .first-row {
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 15em 20em;
   height: 18em;
 }
 
@@ -46,9 +80,14 @@
   font-size: large;
 }
 
+.paragraph {
+  color: #626262;
+  font-size: medium;
+}
+
 .initial-price-container {
   display: grid;
-  grid-template-columns: 70% 30%;
+  grid-template-columns: 80% 10% 10%;
 }
 
 .second-row {
@@ -58,7 +97,6 @@
 }
 
 .second-row > div {
-  padding: 5px 20px 20px 35px;
   font-size: medium;
 }
 
@@ -71,11 +109,14 @@
   font-weight: 600;
 }
 
+.focus {
+  background: #F1C617;
+}
+
 .third-row {
   height: 8em;
   display: grid;
   grid-template-rows: 40% 60%;
-  padding: 20px 20px 20px 35px;
 }
 
 .extra-topping-container {
@@ -92,7 +133,6 @@
 }
 
 .fourth-row {
-  padding: 20px 20px 20px 33px;
   display: grid;
   grid-template-columns: 50% 50%;
   height: 4em;
@@ -102,7 +142,6 @@
 .btn-option {
   font-size: medium;
   height: 1.6em;
-  background: #FFFFFF;
   border: 1px solid #F1C617;
   border-radius: 8px;
   color: #626262;
@@ -144,10 +183,13 @@
   height: 54px;
   border-radius: 46px;
   border-color: #F1C617;
-  background-color: #FFFFFF;
+  background-color: #F1C617;
 }
 
 .add-to-cart-btn:hover {
   font-weight: 700;
-  background-color: #F1C617;
-}/*# sourceMappingURL=product.css.map */
+}
+
+.product-description {
+  padding-left: 2em;
+}/*# sourceMappingURL=product-detail.css.map */
