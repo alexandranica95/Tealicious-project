@@ -10,9 +10,8 @@ setTimeout( function() {
     const arrayOfCards = Array.from(cardElements);
     arrayOfCards.forEach(cardElement => {
         cardElement.addEventListener("click", e => {
-          //createCartElement();
-          //console.log(e)
-          window.localStorage.setItem('productId', e.currentTarget.id) //la click seteaza id ul nou
+          //la click seteaza id ul nou
+          window.localStorage.setItem('productId', e.currentTarget.id) 
         });
     });
   }
