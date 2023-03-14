@@ -9,6 +9,8 @@ setTimeout(function () {
 function Run() {
    // event listener on product card
    addCardListeners();
+   getToppingSelected();
+   
 
    //quantity buttons event listeners
    const quantityButtonsElement = document.querySelector(".quantity-option");
@@ -58,8 +60,33 @@ function Run() {
       }
    });
 
+
+   //store cart items in local storage
+   const addToCartButton = document.querySelector(".add-to-cart-btn");
+   addToCartButton.addEventListener("click", e => {
+      const cartItem = storeCartItem();//obiectul pe care dau click
+      const cartItems = JSON.parse(localStorage.getItem('cartItems'))//colectia din local storage
+      const existentCartItem = cartItems.find(e => e.customId === cartItem.customId);//obiectul deja adaugat in local storage
+
+      if(cartItems === "undefined" && cartItems === null){
+         localStorage.setItem('cartItems',JSON.stringify([cartItem]))
+      }
+      else if(existentCartItem){
+       existentCartItem.numberOfProducts += cartItem.numberOfProducts;
+       localStorage.setItem('cartItems', JSON.stringify(cartItems))
+      }
+      else {
+         cartItems.push(cartItem)
+         localStorage.setItem('cartItems', JSON.stringify(cartItems))
+      }
+   });
 }
-//
+
+
+
+
+//functions definition
+
 function addCardListeners() {
    const cardElements = document.querySelectorAll(".card");
    const arrayOfCards = Array.from(cardElements);
@@ -107,21 +134,30 @@ function getProductDetails(document) {
    const idProduct = localStorage.getItem('productId'); //get id of the product
    const product = getProductById(idProduct); //get product by the id
    
-   let quantityButtons = document.querySelectorAll(".quantity-option .btn-option");
 
-   let isBigGlass = false;
-   if (quantityButtons[1].classList.contains('focus')) {
-      isBigGlass = true
-   }
-
+   const isBigGlass = getIsBigGlass();
    const numberOfToppings = getToppingNumber();
-   const numberOfProducts = parseInt(document.querySelector(".products-quantity").innerHTML);
+   const numberOfProducts = getNumberOfProducts();
    return {
       initialPrice: product.price,
       isBigGlass: isBigGlass,
       numberOfToppings: numberOfToppings,
       numberOfProducts: numberOfProducts
    }
+}
+
+function getIsBigGlass() {
+   const quantityButtons = document.querySelectorAll(".quantity-option .btn-option");
+
+   let isBigGlass = false;
+   if (quantityButtons[1].classList.contains('focus')) {
+      isBigGlass = true;
+   }
+   return isBigGlass;
+}
+
+function getNumberOfProducts() {
+   return parseInt(document.querySelector(".products-quantity").innerHTML);
 }
 
 //numbers of topping selected
@@ -135,4 +171,39 @@ function getToppingNumber() {
       }
    });
    return sumOfToppingsSelected;
+}
+
+function getToppingSelected(){
+   const toppingSelected = document.querySelectorAll(".topping-options > .btn-option.focus");
+   const mappedToppings = Array.from(toppingSelected).map(item => { return item.innerHTML});
+   return mappedToppings; 
+}
+
+
+function storeCartItem(){
+   const productId = localStorage.getItem('productId')
+   const NumberOfProducts = getNumberOfProducts();
+   const finalPrice = document.querySelector(".product-price").innerHTML;
+   const isBigGlass = getIsBigGlass();
+   const toppingSelected = getToppingSelected();
+   const CustomId = getCustomId(productId, toppingSelected, isBigGlass);
+   return {
+      id: productId,
+      numberOfProducts: NumberOfProducts,
+      finalPrice: finalPrice,
+      isBigGlass: isBigGlass,
+      toppingSelected: toppingSelected,
+      customId: CustomId
+   }
+}
+
+function getCustomId(id, toppingSelected, isBigGlass){
+   
+   let customId = " "
+   customId = customId + id + "_"
+   toppingSelected.sort().forEach(elem => {
+      customId = customId + elem 
+   })
+   customId = customId + "_" + isBigGlass
+   return customId 
 }

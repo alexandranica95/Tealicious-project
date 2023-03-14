@@ -12,26 +12,23 @@ body {
     box-sizing: border-box;
   }
   
+  h2 {
+    padding-left: 0.9em;
+  }
   .row {
-    display: -ms-flexbox; /* IE10 */
     display: flex;
-    -ms-flex-wrap: wrap; /* IE10 */
     flex-wrap: wrap;
-    margin: 0 -16px;
   }
   
   .col-25 {
-    -ms-flex: 25%; /* IE10 */
     flex: 25%;
   }
   
   .col-50 {
-    -ms-flex: 50%; /* IE10 */
     flex: 50%;
   }
   
   .col-75 {
-    -ms-flex: 75%; /* IE10 */
     flex: 75%;
   }
   
@@ -52,7 +49,7 @@ body {
     width: 100%;
     margin-bottom: 20px;
     padding: 12px;
-    border: 1px solid $verydark-grey;
+    border: 1px solid $dark-grey;
     border-radius: 8px;
   }
   
@@ -77,6 +74,7 @@ body {
     border-radius: 8px;
     cursor: pointer;
     font-size: 17px;
+    font-weight: 700;
   }
   
   .btn:hover {

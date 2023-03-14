@@ -3,12 +3,11 @@
 * {box-sizing: border-box;}
 
 body{
+    $font: "Manrope";
+    font-size: 17px;
+    padding: 8px;
     background-color: $light-grey;
 
-h3{
-  padding-left: 1em;
-}
-    
 }
 input[type=text], select, textarea {
   width: 100%;
@@ -40,6 +39,9 @@ input[type=submit] {
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  width: 100%;
+  font-weight: 700;
+  font-size: 17px;
 }
 
 input[type=submit]:hover {
@@ -47,6 +49,15 @@ input[type=submit]:hover {
 }
 
 .container {
+  border: 1px solid #d1d1d1;
+  background-color: $white;
   border-radius: 8px;
   padding: 20px;
+
+}
+
+@media (max-width: 800px) {
+  .container {
+    flex-direction:row;
+  }
 }
