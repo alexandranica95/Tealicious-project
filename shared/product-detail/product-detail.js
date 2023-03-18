@@ -1,6 +1,7 @@
+import { createCartElement } from '/shared/cart/cart.js';
 import {
    getProductById
-} from '/data/backendservice.js'
+} from '/data/backendservice.js';
 
 setTimeout(function () {
    Run();
@@ -8,9 +9,11 @@ setTimeout(function () {
 
 function Run() {
    // event listener on product card
+   // display cart Items
+
    addCardListeners();
-   getToppingSelected();
-   
+   displayCartItems();
+   updateProductPrice();
 
    //quantity buttons event listeners
    const quantityButtonsElement = document.querySelector(".quantity-option");
@@ -64,29 +67,43 @@ function Run() {
    //store cart items in local storage
    const addToCartButton = document.querySelector(".add-to-cart-btn");
    addToCartButton.addEventListener("click", e => {
-      const cartItem = storeCartItem();//obiectul pe care dau click
-      const cartItems = JSON.parse(localStorage.getItem('cartItems'))//colectia din local storage
-      const existentCartItem = cartItems.find(e => e.customId === cartItem.customId);//obiectul deja adaugat in local storage
+      const clickedCartItemData = storeCartItem();//obiectul pe care dau click
+      let cartItemsInLocalStorage = JSON.parse(localStorage.getItem('cartItems'))//colectia din local storage
+      
+      // set cart items to local storage, daca if-ul este adevarat nu se mai executa else
+      if(cartItemsInLocalStorage === "undefined" || cartItemsInLocalStorage === null){
+         cartItemsInLocalStorage = [clickedCartItemData];
+         localStorage.setItem('cartItems', JSON.stringify(cartItemsInLocalStorage))
+      }
+      else{
+         const existentCartItem = cartItemsInLocalStorage.find(e => e.customId === clickedCartItemData.customId);//obiectul deja adaugat in local storage
+         if(existentCartItem){
+            existentCartItem.numberOfProducts += clickedCartItemData.numberOfProducts;
+            localStorage.setItem('cartItems', JSON.stringify(cartItemsInLocalStorage))
+           }
+           else {
+              cartItemsInLocalStorage.push(clickedCartItemData)
+              localStorage.setItem('cartItems', JSON.stringify(cartItemsInLocalStorage))
+           }
+      }
 
-      if(cartItems === "undefined" && cartItems === null){
-         localStorage.setItem('cartItems',JSON.stringify([cartItem]))
-      }
-      else if(existentCartItem){
-       existentCartItem.numberOfProducts += cartItem.numberOfProducts;
-       localStorage.setItem('cartItems', JSON.stringify(cartItems))
-      }
-      else {
-         cartItems.push(cartItem)
-         localStorage.setItem('cartItems', JSON.stringify(cartItems))
-      }
+      //reload page
+      location.reload();
    });
+
 }
 
+function displayCartItems() {
+   let cartItemsInLocalStorage = JSON.parse(localStorage.getItem('cartItems')); //colectia din local storage
 
-
+   if (cartItemsInLocalStorage != null) {
+      cartItemsInLocalStorage.forEach(elem => {
+         createCartElement(elem);
+      });
+   }
+}
 
 //functions definition
-
 function addCardListeners() {
    const cardElements = document.querySelectorAll(".card");
    const arrayOfCards = Array.from(cardElements);
@@ -109,15 +126,17 @@ function replaceProductDetails() {
 }
 
 function updateProductPrice() {
-   const productDetails = getProductDetails(document);
+   const productDetails = getProductDetails();
 
    const finalPrice = calculatePrice(productDetails.initialPrice,
       productDetails.isBigGlass,
       productDetails.numberOfToppings,
       productDetails.numberOfProducts);
 
+
    document.querySelector(".product-price").innerHTML = finalPrice;
 }
+
 
 function calculatePrice(initialPrice, isBigGlass, numberOfToppings, numberOfProducts) {
    let finalPrice = initialPrice;
@@ -130,7 +149,7 @@ function calculatePrice(initialPrice, isBigGlass, numberOfToppings, numberOfProd
    return finalPrice;
 }
 
-function getProductDetails(document) {
+function getProductDetails() {
    const idProduct = localStorage.getItem('productId'); //get id of the product
    const product = getProductById(idProduct); //get product by the id
    

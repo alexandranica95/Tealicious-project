@@ -1,6 +1,4 @@
 
-import {createCartElement} from '/shared/cart/cart.js'
-
 setTimeout( function() {
      cardRun();
   }, 1000);

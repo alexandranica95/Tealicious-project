@@ -1,19 +1,23 @@
-export function createCartElement(){
+import {getProductById} from '/data/backendservice.js'
+export function createCartElement(cartItemData)
+{
+    const product = getProductById(cartItemData.id);
+
     const cartItem = document.createElement('div');
     cartItem.setAttribute ('class', 'cart-item');
 
     const itemImage = document.createElement('img');
-    itemImage.setAttribute ('class', 'cart-img')
+    itemImage.setAttribute( 'src', product.pictureUrl);
     cartItem.appendChild(itemImage)
 
     const productName = document.createElement('div');
     productName.setAttribute ('class', 'cart-product-name');
-    productName.textContent = "Cheeesecake red velvet";
+    productName.textContent = product.title;
     cartItem.appendChild(productName)
 
     const productPrice = document.createElement('div');
-    productPrice.setAttribute ('class', 'product-price');
-    productPrice.textContent = "22 lei";
+    productPrice.setAttribute ('class', 'cart-price');
+    productPrice.textContent = cartItemData.finalPrice;
     cartItem.appendChild(productPrice)
 
     const cartButton = document.createElement('div');
@@ -31,7 +35,7 @@ export function createCartElement(){
 
     const textNumber = document.createElement('input');
     textNumber.setAttribute ('type', 'text');
-    textNumber.setAttribute ('value', '1');
+    textNumber.setAttribute ('value', cartItemData.numberOfProducts);  // caerItem.numberOfPr
     number.appendChild(textNumber);
 
     const plus = document.createElement('span');

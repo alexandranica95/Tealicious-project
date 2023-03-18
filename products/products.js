@@ -80,12 +80,12 @@ async function AddSubcategoryProducts(products, productsSectionSelector) {
   const response = await fetch("/shared/card/card.html");
   const defaultCardHtml = await response.text();
 
-  //intr un for generez default cards cate am in lista de fruit tea
+  //intr un for generez default cards cate am in lista de fruit tea si celelalte produse
   for (let i = 0; i < products.length; i++) {
       const productsSection = document.querySelector(productsSectionSelector);
       productsSection.innerHTML += defaultCardHtml;
 
-      const cardElement = productsSection.querySelector(`.card:nth-child(${ i+1 })`);
+      const cardElement = productsSection.querySelector('.card:nth-child(' + (i + 1 ) + ')') ;
       const productData = products[i];
 
       cardElement.querySelector(".title").innerHTML = productData.title;

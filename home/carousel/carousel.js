@@ -15,9 +15,9 @@ import {getAllBestsellersProducts} from '/data/backendservice.js'
 const buttonsWrapper = document.querySelector(".map");
 const slides = document.querySelector(".bubble-tea-products");
 
-buttonsWrapper?.addEventListener("click", e => {
+buttonsWrapper.addEventListener("click", e => {
   if (e.target.nodeName === "BUTTON") {
-    Array.from(buttonsWrapper?.children).forEach(item =>
+    Array.from(buttonsWrapper.children).forEach(item =>
       item.classList.remove("active")
     );
     if (e.target.classList.contains("first")) {

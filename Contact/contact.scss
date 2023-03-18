@@ -1,24 +1,21 @@
+@import '../shared/footer/footer.scss';
+@import '../shared/navbar/navbar.scss';
 @import '../variables.scss';
-
-* {box-sizing: border-box;}
+@import '../base.scss';
 
 body{
     $font: "Manrope";
     font-size: 17px;
-    padding: 8px;
     background-color: $light-grey;
-
+    
 }
+
 input[type=text], select, textarea {
-  width: 100%;
-  padding: 12px;
+  width: 98%;
+  padding: 10px;
   border: 1px solid $dark-grey;
   border-radius: 8px;
-  box-sizing: border-box;
-  margin-top: 6px;
-  margin-bottom: 16px;
-  resize: vertical;
-  border-radius: 8px;
+  margin-bottom: 17px;
 }
 
 input[type=tel]{
@@ -48,16 +45,33 @@ input[type=submit]:hover {
   background-color: $dark-grey;
 }
 
+input{
+  height: auto;
+}
 .container {
+  display: grid;
+}
+
+.button-submit{
+  text-align: center;
+}
+
+.contact-form{
   border: 1px solid #d1d1d1;
-  background-color: $white;
-  border-radius: 8px;
   padding: 20px;
+  background-color: $white;
+  padding: 10em;
 
 }
 
-@media (max-width: 800px) {
-  .container {
-    flex-direction:row;
-  }
+.button-submit{
+
+  height: 3em;
+}
+
+.navbar-area{
+  background-image: url("/assets/images/footer-1600x680.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 15em;
 }

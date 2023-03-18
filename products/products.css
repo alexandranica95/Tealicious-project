@@ -108,7 +108,7 @@ li > i {
 }
 
 .footer {
-  background-image: linear-gradient(rgba(13, 12, 12, 0.495), rgba(43, 43, 43, 0.799)), url("/assets/images/Background-home-page.jpg");
+  background-image: url("/assets/images/footer-1600x680.png");
   background-size: cover;
   text-align: center;
 }
@@ -190,7 +190,6 @@ li > i {
   height: 3.5em;
   border-radius: 8px;
   padding-left: 2%;
-  content: url("/assets/images/categorypage/greenapple.jpg");
 }
 
 .horizontal-line {
@@ -219,7 +218,6 @@ span {
 input {
   height: 17px;
   width: 15px;
-  text-align: center;
   font-size: 15px;
   border: 1px solid #d1d1d1;
   border-radius: 8px;
@@ -283,7 +281,7 @@ input {
   text-decoration: none;
   color: #FFFFFF;
   text-align: center;
-  font-size: 15px;
+  font-size: 1.25em;
 }
 
 a > i {
@@ -506,13 +504,12 @@ body {
   background-image: linear-gradient(rgba(13, 12, 12, 0.495), rgba(80, 80, 80, 0.591)), url("/assets/images/menu-banner-1600x680.png");
   background-size: cover;
   background-repeat: no-repeat;
-  height: 28em;
+  height: 30em;
 }
 
 .wrap-container {
   display: grid;
   background-color: #f1f5f8;
-  padding-top: 10em;
   padding-bottom: 10em;
 }
 
@@ -520,22 +517,22 @@ body {
   justify-content: center;
   display: grid;
   grid-template-columns: 15em 15em 15em;
-  grid-gap: 5em;
   height: 15em;
+  padding-top: 7em;
+  grid-gap: 5%;
 }
-
-.category-container > div {
+.category-container div {
   margin: 0 auto;
   position: relative;
-  background-size: 85%;
+  background-size: 100%;
   background-position: 50%;
   background-repeat: no-repeat;
-  width: 60%;
-  height: 75%;
+  width: 80%;
   border-radius: 15px;
-  background-color: #FFFFFF;
-  box-shadow: 0.5px 2px 25px #d1d1d1;
   cursor: pointer;
+}
+.category-container h5 {
+  padding-top: 2em;
 }
 
 .category-button > div {
@@ -543,7 +540,7 @@ body {
   margin-top: 10%;
   background-size: 100%;
   background-repeat: no-repeat;
-  height: 8em;
+  height: 10em;
   width: 70%;
 }
 
@@ -574,6 +571,7 @@ body {
   grid-template-rows: 70%;
   justify-content: center;
   min-height: 8em;
+  padding-top: 2em;
 }
 
 select {
