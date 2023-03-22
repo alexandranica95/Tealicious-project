@@ -4,6 +4,7 @@
 @import './categories/category.scss';
 @import '../shared/footer/footer.scss';
 @import '../shared/navbar/navbar.scss';
+@import '../shared/product-detail/product-detail.scss';
 
 .grid-container{
     display: grid;
@@ -59,7 +60,10 @@
     margin-left: 20%;
  }
 
-//  @media (max-width: 800px) {
-//     .grid-container {
-//       flex-direction: column-reverse;
-//     }}
+
+
+  @media (min-width: 600px) {
+    .bubble-tea-products { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  

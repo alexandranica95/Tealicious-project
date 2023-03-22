@@ -11,69 +11,66 @@ import {getAllBestsellersProducts} from '/data/backendservice.js'
 // }
 
 
+setTimeout(function () {
+  Run();
+}, 1000);
+
+
+function Run(){
   //loads dynamically the Card Component
-const buttonsWrapper = document.querySelector(".map");
-const slides = document.querySelector(".bubble-tea-products");
-
-buttonsWrapper.addEventListener("click", e => {
-  if (e.target.nodeName === "BUTTON") {
-    Array.from(buttonsWrapper.children).forEach(item =>
-      item.classList.remove("active")
-    );
-    if (e.target.classList.contains("first")) {
-      slides.style.transform = "translateX(-0%)";
-      e.target.classList.add("active");
-    } else if (e.target.classList.contains("second")) {
-      slides.style.transform = "translateX(-87.5%)";
-      e.target.classList.add("active");
-    } else if (e.target.classList.contains('third')){
-      slides.style.transform = 'translatex(-175%)';
-      e.target.classList.add('active');
-    }
-  }
-});
-
-const productsWrapper = document.querySelector(".bar-container")
-const bubbleTeaProducts = Array.from(document.querySelector(".wrapper-carousel").children);
-const mapElement = document.querySelector(".map");
-
-productsWrapper.addEventListener("click", e => {
-  Array.from(productsWrapper.children).forEach(item => item.classList.remove("focus"));
+  const buttonsWrapper = document.querySelector(".map");
+  const slides = document.querySelector(".bubble-tea-products");
   
-  if (e.target.classList.contains("first")) {
-    bubbleTeaProducts[0].classList.remove("display-none")
-    mapElement.classList.remove("display-none");
-    e.target.classList.add("focus");
-
-    bubbleTeaProducts[1].classList.add("display-none")
-    bubbleTeaProducts[2].classList.add("display-none")
-  } else if (e.target.classList.contains("second")) {
-    bubbleTeaProducts[1].classList.remove("display-none")
-    e.target.classList.add("focus");
-
-    mapElement.classList.add("display-none");
-    bubbleTeaProducts[0].classList.add("display-none")
-    bubbleTeaProducts[2].classList.add("display-none")
-  } else if (e.target.classList.contains('third')){
-    bubbleTeaProducts[2].classList.remove("display-none")
-    e.target.classList.add("focus");
+  buttonsWrapper.addEventListener("click", e => {
+    if (e.target.nodeName === "BUTTON") {
+      Array.from(buttonsWrapper.children).forEach(item =>
+        item.classList.remove("active")
+      );
+      if (e.target.classList.contains("first")) {
+        slides.style.transform = "translateX(-0%)";
+        e.target.classList.add("active");
+      } else if (e.target.classList.contains("second")) {
+        slides.style.transform = "translateX(-87.5%)";
+        e.target.classList.add("active");
+      } else if (e.target.classList.contains('third')){
+        slides.style.transform = 'translatex(-175%)';
+        e.target.classList.add('active');
+      }
+    }
+  });
+  
+  const productsWrapper = document.querySelector(".bar-container")
+  const bubbleTeaProducts = Array.from(document.querySelector(".wrapper-carousel").children);
+  const mapElement = document.querySelector(".map");
+  
+  productsWrapper.addEventListener("click", e => {
+    Array.from(productsWrapper.children).forEach(item => item.classList.remove("focus"));
     
-    mapElement.classList.add("display-none");
-    bubbleTeaProducts[0].classList.add("display-none")
-    bubbleTeaProducts[1].classList.add("display-none")
-  }
-})
-
-
-async function AddCardComponent() {
-  const response = await fetch("../../shared/card/card.html");
-  const data = await response.text();
-  for (let i = 0; i < 7; i++){
-    document.querySelector("limited-edition").innerHTML += data;
-  }
-
-  import('../../shared/card/card.js')
+    if (e.target.classList.contains("first")) {
+      bubbleTeaProducts[0].classList.remove("display-none")
+      mapElement.classList.remove("display-none");
+      e.target.classList.add("focus");
+  
+      bubbleTeaProducts[1].classList.add("display-none")
+      bubbleTeaProducts[2].classList.add("display-none")
+    } else if (e.target.classList.contains("second")) {
+      bubbleTeaProducts[1].classList.remove("display-none")
+      e.target.classList.add("focus");
+  
+      mapElement.classList.add("display-none");
+      bubbleTeaProducts[0].classList.add("display-none")
+      bubbleTeaProducts[2].classList.add("display-none")
+    } else if (e.target.classList.contains('third')){
+      bubbleTeaProducts[2].classList.remove("display-none")
+      e.target.classList.add("focus");
+      
+      mapElement.classList.add("display-none");
+      bubbleTeaProducts[0].classList.add("display-none")
+      bubbleTeaProducts[1].classList.add("display-none")
+    }
+  })
 }
+
 
 addLimitedEditionProductsToCarousel();
 
@@ -89,13 +86,12 @@ async function addLimitedEditionProductsToCarousel(){
     const cardElement = limitedEditionSection.querySelector(`.card:nth-child(${ i+1 })`);
     const productData = leProducts[i];
 
-    console.log(cardElement);
-    console.log(productData);
-
     cardElement.querySelector(".title").innerHTML = productData.title ; 
     cardElement.querySelector("img").src = productData.pictureUrl;
     cardElement.querySelector(".price").innerHTML = `${productData.price} lei`;
     cardElement.querySelector(".description").innerHTML = productData.description;
+    
+    cardElement.setAttribute("id", productData.id);
   }
 
 }
@@ -114,20 +110,18 @@ addNewArrivalProductsToCarousel();
       const cardElement = newArrivalSection.querySelector(`.card:nth-child(${ i+1 })`);
       const productData = naProducts[i];
 
-    console.log(cardElement);
-    console.log(productData);
-
     cardElement.querySelector(".title").innerHTML = productData.title ; 
     cardElement.querySelector("img").src = productData.pictureUrl;
     cardElement.querySelector(".price").innerHTML = `${productData.price} lei`;
     cardElement.querySelector(".description").innerHTML = productData.description;
 
+    
+    cardElement.setAttribute("id", productData.id);
     }
 }
 
 
 addBestsellersToCarousel();
-
   async function addBestsellersToCarousel(){
     const bestSellersProducts = await getAllBestsellersProducts();
     const response = await fetch("../../shared/card/card.html");
@@ -140,14 +134,13 @@ addBestsellersToCarousel();
       const cardElement = bestSellersSection.querySelector(`.card:nth-child(${ i+1 })`);
       const productData = bestSellersProducts[i];
 
-    console.log(cardElement);
-    console.log(productData);
-
     cardElement.querySelector(".title").innerHTML = productData.title ; 
     cardElement.querySelector("img").src = productData.pictureUrl;
     cardElement.querySelector(".price").innerHTML = `${productData.price} lei`;
     cardElement.querySelector(".description").innerHTML = productData.description;
 
+    
+    cardElement.setAttribute("id", productData.id);
     }
 }
 

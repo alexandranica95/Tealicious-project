@@ -6,11 +6,11 @@
     z-index: 1;
     display: none;
     margin-left: -8%;
-    background: linear-gradient(to bottom right, $light-grey);
+    background: $dark-grey;
     height: fit-content;
     background-color: $white;
     border-radius: 10px;
-    width: 20em;
+    width: 21em;
 }
 
 
@@ -28,7 +28,7 @@
 }
 
 .cart-heading{
-    font-size: 14px;
+    font-size: 1.5em;
     font-weight: 500;
 }
 
@@ -39,21 +39,21 @@
 
 .cart-item{
     display: grid;
-    grid-template-columns: 20% 40% 10% 30%;
+    grid-template-columns: 20% 40% 15% 25%;
     padding: 0.4em;
-}
-
-.cart-img{
-    width: 3.5em;
-    height: 3.5em;
-    border-radius: 8px;
-    padding-left: 2%;
+    
+    & img {
+        width: 3.5em;
+        height: 3.5em;
+        border-radius: 8px;
+        padding-left: 2%;
+    }
 }
 
 
 //line beetwen products
 .horizontal-line{
-    background-color: $light-grey;
+    background-color: $dark-grey;
     height: 0.2px;
     width: 100%;
 }
@@ -64,22 +64,15 @@ background-color: $dark-grey;
 span {
     cursor:pointer;
 }
-.minus, .plus{
-    height: 2em;
-    width: 2em;
-    background:$light-grey;
-    border-radius: 8px;
-    border: 4px solid $light-grey;
-    text-align: center;
-}
 
-input{
-    height:17px;
-    width: 15px;
+.number input{
+    height: 2em;
+    width: 1.2em;
     font-size: 15px;
     border:1px solid $dark-grey;
-    border-radius: 8px;
-    vertical-align: middle;
+    border-radius: 50px;
+    text-align: center;
+   
 }
 
 //checkout cart section
@@ -108,7 +101,7 @@ input{
 
            .fa-angle-right {
             color: $yellow;
-            padding-left: .5em;
+            padding-left: .4em;
 
            }
 
@@ -116,13 +109,51 @@ input{
 
 .badge:after{
     content:attr(value);
-    font-size:12px;
+    font-size: 14px;
     color: $black;
     background: $yellow;
-    border-radius:50%;
+    border-radius: 11px;
     padding: 0 5px;
     position:relative;
     left:-8px;
     top:-10px;
-    opacity: 1;
+    opacity: 2;
+}
+
+.cart-product-name-description{
+    display: grid;
+    font-size: 0.7em;
+    font-weight: 700;
+}
+
+.cart-product-description{
+    font-size: small;
+    color: $verydark-grey;
+}
+
+.number{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    padding-left: 0.6em;
+    padding-right: 0.6em;
+}
+
+.plus, .minus{
+    height: 1.5em;
+    width: 1em;
+    border-radius: 20px;
+    background: rgb(255, 255, 255);
+    border: 1.5px solid $yellow;
+    font-weight: 650;
+    cursor: pointer;
+    margin: auto;
+    text-align: center;
+}
+
+.cart-button{
+    padding-top: 10%;
+}
+
+.cart-price{
+    padding-top: 25%;
 }

@@ -8,7 +8,7 @@
 .navbar-container{
     display: grid;
     grid-template-columns: 3% 17% 10% 10% 10% 10% 20% 3% 3%;
-    height: 8em;
+    height: 10em;
     
 }
 
@@ -28,10 +28,21 @@ a > i {
 
 .logo-area {
     display: grid;
-    margin-right: 15% ;
-    margin-top: 10%;
-    background-size: 80%;
+    background-size: 70%;
+    margin-top: 15%;
     background-repeat: no-repeat;
     background-image: url("/assets/images/home/logo-456x174.png");
     cursor: pointer;
 }
+
+a:hover{
+    cursor: pointer;
+}
+
+@media (max-width: 800px) {
+    .navbar-container {font-size: 0.8em; }
+  }
+
+  .fa .fas{
+    font-size: 20em;
+  }

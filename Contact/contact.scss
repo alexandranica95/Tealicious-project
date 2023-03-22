@@ -10,63 +10,63 @@ body{
     
 }
 
-input[type=text], select, textarea {
-  width: 98%;
-  padding: 10px;
-  border: 1px solid $dark-grey;
-  border-radius: 8px;
-  margin-bottom: 17px;
+form{
+  input[type=text], select, textarea {
+    width: 98%;
+    padding: 10px;
+    border: 1px solid $dark-grey;
+    border-radius: 8px;
+    margin-bottom: 17px;
+  }
+  
+  input[type=tel]{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid $dark-grey;
+    border-radius: 8px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+  
+  .button-submit {
+    background-color: $yellow;
+    color: $white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: 700;
+    font-size: 17px;
+  }
+  
+  .button-submit:hover {
+    background-color: $dark-grey;
+  }
+  
+  input{
+    height: auto;
+  }
 }
 
-input[type=tel]{
-  width: 100%;
-  padding: 12px;
-  border: 1px solid $dark-grey;
-  border-radius: 8px;
-  box-sizing: border-box;
-  margin-top: 6px;
-  margin-bottom: 16px;
-  resize: vertical;
-}
-
-input[type=submit] {
-  background-color: $yellow;
-  color: $white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  width: 100%;
-  font-weight: 700;
-  font-size: 17px;
-}
-
-input[type=submit]:hover {
-  background-color: $dark-grey;
-}
-
-input{
-  height: auto;
-}
 .container {
   display: grid;
-}
-
-.button-submit{
-  text-align: center;
 }
 
 .contact-form{
   border: 1px solid #d1d1d1;
   padding: 20px;
   background-color: $white;
-  padding: 10em;
-
+  padding: 4em;
+  padding-left: 25em;
+  padding-right: 25em;
 }
 
 .button-submit{
-
-  height: 3em;
+  text-align: center;
+  height: 3.5em;
+  margin-top: 3em;
 }
 
 .navbar-area{

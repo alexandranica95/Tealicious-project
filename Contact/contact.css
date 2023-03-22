@@ -53,12 +53,12 @@ li > i {
   z-index: 1;
   display: none;
   margin-left: -8%;
-  background: linear-gradient(to bottom right, #f1f5f8);
+  background: #d1d1d1;
   height: -moz-fit-content;
   height: fit-content;
   background-color: #FFFFFF;
   border-radius: 10px;
-  width: 20em;
+  width: 21em;
 }
 
 .products-number {
@@ -75,7 +75,7 @@ li > i {
 }
 
 .cart-heading {
-  font-size: 14px;
+  font-size: 1.5em;
   font-weight: 500;
 }
 
@@ -87,11 +87,10 @@ li > i {
 
 .cart-item {
   display: grid;
-  grid-template-columns: 20% 40% 10% 30%;
+  grid-template-columns: 20% 40% 15% 25%;
   padding: 0.4em;
 }
-
-.cart-img {
+.cart-item img {
   width: 3.5em;
   height: 3.5em;
   border-radius: 8px;
@@ -99,7 +98,7 @@ li > i {
 }
 
 .horizontal-line {
-  background-color: #f1f5f8;
+  background-color: #d1d1d1;
   height: 0.2px;
   width: 100%;
 }
@@ -112,22 +111,13 @@ span {
   cursor: pointer;
 }
 
-.minus, .plus {
+.number input {
   height: 2em;
-  width: 2em;
-  background: #f1f5f8;
-  border-radius: 8px;
-  border: 4px solid #f1f5f8;
-  text-align: center;
-}
-
-input {
-  height: 17px;
-  width: 15px;
+  width: 1.2em;
   font-size: 15px;
   border: 1px solid #d1d1d1;
-  border-radius: 8px;
-  vertical-align: middle;
+  border-radius: 50px;
+  text-align: center;
 }
 
 .cart-total {
@@ -156,20 +146,58 @@ input {
 
 .fa-angle-right {
   color: #F1C617;
-  padding-left: 0.5em;
+  padding-left: 0.4em;
 }
 
 .badge:after {
   content: attr(value);
-  font-size: 12px;
+  font-size: 14px;
   color: #000000;
   background: #F1C617;
-  border-radius: 50%;
+  border-radius: 11px;
   padding: 0 5px;
   position: relative;
   left: -8px;
   top: -10px;
-  opacity: 1;
+  opacity: 2;
+}
+
+.cart-product-name-description {
+  display: grid;
+  font-size: 0.7em;
+  font-weight: 700;
+}
+
+.cart-product-description {
+  font-size: small;
+  color: #8A8989;
+}
+
+.number {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  padding-left: 0.6em;
+  padding-right: 0.6em;
+}
+
+.plus, .minus {
+  height: 1.5em;
+  width: 1em;
+  border-radius: 20px;
+  background: rgb(255, 255, 255);
+  border: 1.5px solid #F1C617;
+  font-weight: 650;
+  cursor: pointer;
+  margin: auto;
+  text-align: center;
+}
+
+.cart-button {
+  padding-top: 10%;
+}
+
+.cart-price {
+  padding-top: 25%;
 }
 
 .cart-wrapper:hover .cart-container {
@@ -179,7 +207,7 @@ input {
 .navbar-container {
   display: grid;
   grid-template-columns: 3% 17% 10% 10% 10% 10% 20% 3% 3%;
-  height: 8em;
+  height: 10em;
 }
 
 .navbar-container > a, .navbar-container > .cart-wrapper {
@@ -197,12 +225,24 @@ a > i {
 
 .logo-area {
   display: grid;
-  margin-right: 15%;
-  margin-top: 10%;
-  background-size: 80%;
+  background-size: 70%;
+  margin-top: 15%;
   background-repeat: no-repeat;
   background-image: url("/assets/images/home/logo-456x174.png");
   cursor: pointer;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+@media (max-width: 800px) {
+  .navbar-container {
+    font-size: 0.8em;
+  }
+}
+.fa .fas {
+  font-size: 20em;
 }
 
 * {
@@ -216,20 +256,23 @@ body {
   height: 100%;
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
 body {
   font-size: 17px;
   background-color: #f1f5f8;
 }
 
-input[type=text], select, textarea {
+form input[type=text], form select, form textarea {
   width: 98%;
   padding: 10px;
   border: 1px solid #d1d1d1;
   border-radius: 8px;
   margin-bottom: 17px;
 }
-
-input[type=tel] {
+form input[type=tel] {
   width: 100%;
   padding: 12px;
   border: 1px solid #d1d1d1;
@@ -239,11 +282,9 @@ input[type=tel] {
   margin-bottom: 16px;
   resize: vertical;
 }
-
-input[type=submit] {
+form .button-submit {
   background-color: #F1C617;
   color: #FFFFFF;
-  padding: 12px 20px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -251,12 +292,10 @@ input[type=submit] {
   font-weight: 700;
   font-size: 17px;
 }
-
-input[type=submit]:hover {
+form .button-submit:hover {
   background-color: #d1d1d1;
 }
-
-input {
+form input {
   height: auto;
 }
 
@@ -264,19 +303,19 @@ input {
   display: grid;
 }
 
-.button-submit {
-  text-align: center;
-}
-
 .contact-form {
   border: 1px solid #d1d1d1;
   padding: 20px;
   background-color: #FFFFFF;
-  padding: 10em;
+  padding: 4em;
+  padding-left: 25em;
+  padding-right: 25em;
 }
 
 .button-submit {
-  height: 3em;
+  text-align: center;
+  height: 3.5em;
+  margin-top: 3em;
 }
 
 .navbar-area {

@@ -1,42 +1,44 @@
-import { createCartElement } from '/shared/cart/cart.js';
 import {
    getProductById
 } from '/data/backendservice.js';
 
 setTimeout(function () {
    Run();
-}, 1000);
+}, 500);
 
 function Run() {
    // event listener on product card
    // display cart Items
 
    addCardListeners();
-   displayCartItems();
    updateProductPrice();
 
    //quantity buttons event listeners
-   const quantityButtonsElement = document.querySelector(".quantity-option");
+   const quantityButtonsElements = document.querySelectorAll(".quantity-option");
 
-   quantityButtonsElement.addEventListener("click", e => {
-      if (e.target.classList.contains("first")) {
-         Array.from(quantityButtonsElement.children).forEach(item => item.classList.remove("focus"));
-         e.target.classList.add("focus");
+   Array.from(quantityButtonsElements).forEach(quantityButtonsElement => {
+      quantityButtonsElement.addEventListener("click", e => {
+         if (e.target.classList.contains("first")) {
+            Array.from(quantityButtonsElement.children).forEach(item => item.classList.remove("focus"));
+            e.target.classList.add("focus");
 
-      } else if (e.target.classList.contains("second")) {
-         Array.from(quantityButtonsElement.children).forEach(item => item.classList.remove("focus"));
-         e.target.classList.add("focus");
-      }
-      updateProductPrice();
-   })
+         } else if (e.target.classList.contains("second")) {
+            Array.from(quantityButtonsElement.children).forEach(item => item.classList.remove("focus"));
+            e.target.classList.add("focus");
+         }
+         updateProductPrice();
+      })
+   });
 
    //toppings buttons event listners
    const toppingButtonsElement = document.querySelectorAll(".topping-options .btn-option");
    Array.from(toppingButtonsElement).forEach(btn => {
       btn.addEventListener("click", e => {
+         const idProduct = localStorage.getItem('productId');
+         const product = getProductById(idProduct); //ia id ul nou
          if (e.target.classList.contains("focus")) {
             e.target.classList.remove("focus");
-         } else if (getToppingNumber() < 4) {
+         } else if (getToppingNumber(product.category) < 4) {
             e.target.classList.add("focus");
          }
          updateProductPrice();
@@ -67,7 +69,7 @@ function Run() {
    //store cart items in local storage
    const addToCartButton = document.querySelector(".add-to-cart-btn");
    addToCartButton.addEventListener("click", e => {
-      const clickedCartItemData = storeCartItem();//obiectul pe care dau click
+      const clickedCartItemData = getCartItem();//obiectul pe care dau click
       let cartItemsInLocalStorage = JSON.parse(localStorage.getItem('cartItems'))//colectia din local storage
       
       // set cart items to local storage, daca if-ul este adevarat nu se mai executa else
@@ -78,7 +80,19 @@ function Run() {
       else{
          const existentCartItem = cartItemsInLocalStorage.find(e => e.customId === clickedCartItemData.customId);//obiectul deja adaugat in local storage
          if(existentCartItem){
+            //updateaza nr de produse
             existentCartItem.numberOfProducts += clickedCartItemData.numberOfProducts;
+
+            //updateaza pretul final
+            const productDetails = getProductDetails();
+
+            const finalPrice = calculatePrice(productDetails.initialPrice,
+               productDetails.isBigGlass,
+               productDetails.numberOfToppings,
+               existentCartItem.numberOfProducts);
+
+            existentCartItem.finalPrice = finalPrice;
+            
             localStorage.setItem('cartItems', JSON.stringify(cartItemsInLocalStorage))
            }
            else {
@@ -88,19 +102,8 @@ function Run() {
       }
 
       //reload page
-      location.reload();
+      window.location.href = '/products/products.html';
    });
-
-}
-
-function displayCartItems() {
-   let cartItemsInLocalStorage = JSON.parse(localStorage.getItem('cartItems')); //colectia din local storage
-
-   if (cartItemsInLocalStorage != null) {
-      cartItemsInLocalStorage.forEach(elem => {
-         createCartElement(elem);
-      });
-   }
 }
 
 //functions definition
@@ -109,6 +112,7 @@ function addCardListeners() {
    const arrayOfCards = Array.from(cardElements);
    arrayOfCards.forEach(cardElement => {
       cardElement.addEventListener("click", e => {
+         window.localStorage.setItem('productId', e.currentTarget.id) 
          replaceProductDetails();
       });
    });
@@ -123,6 +127,37 @@ function replaceProductDetails() {
    modalContent.querySelector(".paragraph").innerHTML = product.description;
    modalContent.querySelector(".title-description").innerHTML = product.title;
    modalContent.querySelector(".product-price").innerHTML = `${product.price}`;
+
+   const bubbleOptions = document.querySelectorAll('.bubble-options')
+   Array.from(bubbleOptions).forEach(elem => {
+      elem.style.display = "none";
+   })
+
+   const coffeeOptions = document.querySelectorAll('.coffee-options')
+   Array.from(coffeeOptions).forEach(elem => {
+      elem.style.display = "none";
+   })
+
+   const waffleOptions = document.querySelectorAll('.waffle-options')
+   Array.from(waffleOptions).forEach(elem => {
+      elem.style.display = "none";
+   })
+
+   if(product.category === 'bubbleTea'){
+      Array.from(bubbleOptions).forEach(elem => {
+         elem.style.display = "block";
+      })
+   }
+   else if(product.category === 'coffee'){
+      Array.from(coffeeOptions).forEach(elem => {
+         elem.style.display = "block";
+      })
+   }
+   else{
+      Array.from(waffleOptions).forEach(elem => {
+         elem.style.display = "block";
+      })
+   }
 }
 
 function updateProductPrice() {
@@ -153,9 +188,9 @@ function getProductDetails() {
    const idProduct = localStorage.getItem('productId'); //get id of the product
    const product = getProductById(idProduct); //get product by the id
    
-
-   const isBigGlass = getIsBigGlass();
-   const numberOfToppings = getToppingNumber();
+   
+   const isBigGlass = getIsBigGlass(product.category);
+   const numberOfToppings = getToppingNumber(product.category);
    const numberOfProducts = getNumberOfProducts();
    return {
       initialPrice: product.price,
@@ -165,13 +200,25 @@ function getProductDetails() {
    }
 }
 
-function getIsBigGlass() {
-   const quantityButtons = document.querySelectorAll(".quantity-option .btn-option");
+function getIsBigGlass(category) {
+   let quantityButtons;
+   if(category === "bubbleTea"){
+      quantityButtons = document.querySelectorAll(".quantity-option.bubble-options .btn-option");
+   }
+
+   else if(category === "coffee"){
+      quantityButtons = document.querySelectorAll(".quantity-option.coffee-options .btn-option");
+   }
+
+   else{
+      quantityButtons = document.querySelectorAll(".quantity-option.waffle-options .btn-option");
+   }
 
    let isBigGlass = false;
    if (quantityButtons[1].classList.contains('focus')) {
       isBigGlass = true;
    }
+
    return isBigGlass;
 }
 
@@ -180,10 +227,24 @@ function getNumberOfProducts() {
 }
 
 //numbers of topping selected
-function getToppingNumber() {
-   const toppingOption = document.querySelectorAll(".topping-options > .btn-option");
-   let sumOfToppingsSelected = 0;
+function getToppingNumber(category) {
 
+   let toppingOption;
+   let sumOfToppingsSelected = 0;
+   if( category === "bubbleTea"){
+      toppingOption = document.querySelectorAll(".topping-options.bubble-options > .btn-option");
+   }
+   
+   else if( category === "coffee"){
+      toppingOption = document.querySelectorAll(".topping-options.coffee-options > .btn-option");
+
+   }
+
+   else{
+      toppingOption = document.querySelectorAll(".topping-options.waffle-options > .btn-option");
+
+   }
+   
    Array.from(toppingOption).forEach(item => {
       if (item.classList.contains("focus")) {
          sumOfToppingsSelected = sumOfToppingsSelected + 1
@@ -199,11 +260,12 @@ function getToppingSelected(){
 }
 
 
-function storeCartItem(){
+function getCartItem(){
    const productId = localStorage.getItem('productId')
+   const product = getProductById(productId);
    const NumberOfProducts = getNumberOfProducts();
    const finalPrice = document.querySelector(".product-price").innerHTML;
-   const isBigGlass = getIsBigGlass();
+   const isBigGlass = getIsBigGlass(product.category);
    const toppingSelected = getToppingSelected();
    const CustomId = getCustomId(productId, toppingSelected, isBigGlass);
    return {
@@ -226,3 +288,26 @@ function getCustomId(id, toppingSelected, isBigGlass){
    customId = customId + "_" + isBigGlass
    return customId 
 }
+
+//click modal popup
+export function displayModal() {
+   document.addEventListener('click', function(event) {
+      const modalContainerElement = document.getElementsByClassName("product-detail-modal")[0];
+      const modalContentElement = document.getElementsByClassName("pop-up-content")[0];
+      const cardElements = Array.from(document.getElementsByClassName("card"));
+   
+      const cardsClicked = cardElements.filter(card => card.contains(event.target)).length;
+
+      if (modalContentElement.contains(event.target)) {
+   
+      }
+      else if(cardsClicked > 0 ) {
+         modalContainerElement.style.display = "block";
+         document.querySelector("body").style.overflow = "hidden";
+
+      }
+      else{
+         modalContainerElement.style.display = "none";
+         document.querySelector("body").style.overflow = "scroll";
+      }
+ })};

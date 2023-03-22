@@ -5,7 +5,7 @@ export async function getAllProducts(){
     const response = await fetch ("/data/products.json"); //am facut un request pentru a primi datele din JSON
     const jsonText = await response.text(); //aici a venit doar textul din Body
 
-    const productslist = JSON.parse(jsonText); //am parsat pentru a transforma din text in obiecte
+    const productslist = JSON.parse(jsonText); //am parsat pentru a transforma din text in array de obiecte
     return productslist;
 }
 

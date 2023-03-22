@@ -70,4 +70,10 @@
   display: flex;
   grid-gap: 2.6em;
   transition: all 1s ease-in-out;
+}
+
+@media (min-width: 600px) {
+  .category-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }/*# sourceMappingURL=category.css.map */

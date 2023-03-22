@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
    <head>
-    <title>Checkout..</title>
-    <link href="submit.html" rel="stylesheet"/>
+      <title>Checkout..</title>
+      <link href="submit.html" rel="stylesheet"/>
       <link href="Checkout.css" rel="stylesheet"/>
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
@@ -15,7 +15,7 @@
          <nav class="navbar-area"></nav>
          <div></div>
          <div>
-            <section class="row">  
+            <section class="row">
                <div class="col-75">
                   <div class="container">
                      <form action="/submit/submit.html">
@@ -30,7 +30,7 @@
                               <input type="text" id="adr" name="address" placeholder="Strada Stefan cel Mare, nr. 5..">
                               <label for="city"><i class="fa fa-institution"></i> City</label>
                               <input type="text" id="city" name="city" placeholder="Iasi..">
-                              <div class="row">
+                              <div class="row space-between">
                                  <div class="col-50">
                                     <label for="county">County</label>
                                     <input type="text" id="county" name="county" placeholder="Iasi..">
@@ -49,15 +49,18 @@
                      </form>
                   </div>
                </div>
-               <div class="col-25">
-                  <div class="container">
-                     <h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b>4</b></span></h4>
-                     <p><a href="#">Product 1</a> <span class="price">$15</span></p>
-                     <p><a href="#">Product 2</a> <span class="price">$5</span></p>
-                     <p><a href="#">Product 3</a> <span class="price">$8</span></p>
-                     <p><a href="#">Product 4</a> <span class="price">$2</span></p>
-                     <hr>
-                     <p>Total <span class="price" style="color:black"><b>$30</b></span></p>
+               <div class="col-25 checkout-products-container">
+                  <div class="price-and-number-products">
+                     <div class="number-of-products-cart">
+                        <div>Products:</div>
+                        <div>4</div>
+                     </div>
+                     <div class="total-price">
+                        Total 
+                        <div>30</div>
+
+                        <div>lei</div>
+                     </div>
                   </div>
                </div>
             </section>
@@ -67,5 +70,5 @@
       </div>
    </body>
    <script src="/checkout/checkout.js" type = "module"></script>
-
+   
 </html>

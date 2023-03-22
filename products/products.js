@@ -8,6 +8,8 @@ import {
 } from '/data/backendservice.js'
 import("../shared/card/card.js");
 
+import{ displayModal } from "../shared/product-detail/product-detail.js";
+
 //add component footer and navbar
 await AddComponent("../shared/footer/footer.js", "../shared/footer/footer.html", ".footer-area");
 await AddComponent("../shared/navbar/navbar.js", "../shared/navbar/navbar.html", ".navbar-area");
@@ -21,6 +23,9 @@ async function AddComponent(javascriptPath, htmlPath, querySelector) {
   document.querySelector(querySelector).innerHTML += htmlText;
 }
 
+
+//display pop up modal
+displayModal()
 
 //added products
 await AddBubbleTea();
@@ -72,21 +77,20 @@ async function AddStandardCoffee() {
 async function AddSpecialCoffee() {
   const SpecialCoffeeProducts = await getAllSpecialCoffeeProducts();
   await AddSubcategoryProducts(SpecialCoffeeProducts, ".special-coffee-products");
-
 }
 
 //add products for any subcategory
-async function AddSubcategoryProducts(products, productsSectionSelector) {
+async function AddSubcategoryProducts(productsFromJson, productsSectionSelector) {
   const response = await fetch("/shared/card/card.html");
   const defaultCardHtml = await response.text();
 
   //intr un for generez default cards cate am in lista de fruit tea si celelalte produse
-  for (let i = 0; i < products.length; i++) {
+  for (let i = 0; i < productsFromJson.length; i++) {
       const productsSection = document.querySelector(productsSectionSelector);
       productsSection.innerHTML += defaultCardHtml;
 
-      const cardElement = productsSection.querySelector('.card:nth-child(' + (i + 1 ) + ')') ;
-      const productData = products[i];
+      const cardElement = productsSection.querySelector(`.card:nth-child(${ i + 1 })`); //punem mana pe cardul pe care tocmai l am adaugat dinamic
+      const productData = productsFromJson[i];
 
       cardElement.querySelector(".title").innerHTML = productData.title;
       cardElement.querySelector("img").src = productData.pictureUrl;
@@ -95,15 +99,47 @@ async function AddSubcategoryProducts(products, productsSectionSelector) {
       
       //get product to detail page by id value
       cardElement.setAttribute("id", productData.id);
+
+      //add ingredientsLabel
+      if(productData.ingredients.includes("greenTea")){
+        cardElement.querySelector('.label-ceai-verde').style.display = "block"
+      }
+      if(productData.ingredients.includes("blackTea")){
+        cardElement.querySelector('.label-ceai-negru').style.display = "block"
+      }
+      if(productData.ingredients.includes("milk")){
+        cardElement.querySelector('.label-milk').style.display = "block"
+      }
+      if(productData.ingredients.includes("no-milk")){
+        cardElement.querySelector('.label-no-milk').style.display = "block"
+      }
+      if(!productData.ingredients.includes("blackTea") && !productData.ingredients.includes("greenTea")){
+        cardElement.querySelector('.label-no-tea').style.display = "block"
+      }
   }
 }
-
 
 //filter products
 filterProducts();
 
 function filterProducts() {
-  showBubbleTea();
+  //getQueryParam
+  const urlParams = new URLSearchParams(window.location.search);
+  const categoryParam = urlParams.get('category');
+  
+  //show initial Products 
+  if( categoryParam === 'Coffee'){
+    showCoffee()
+  }
+
+  else if( categoryParam === 'Waffles'){
+    showWaffle()
+  }
+
+  else{
+    showBubbleTea()
+  }
+
 
   //category
   const categoryCard = document.querySelectorAll(".category-button"); //am pus mana pe toate butoanele (bubbletea, coffee, waffle)
@@ -245,21 +281,5 @@ function showWaffle() {
 }
 
 
-//click modal popup
-document.addEventListener('click', function(event) {
-  const modalContainerElement = document.getElementsByClassName("product-detail-modal")[0];
-  const modalContentElement = document.getElementsByClassName("pop-up-content")[0];
-  const cardElements = Array.from(document.getElementsByClassName("card"));
-  
-  const cardsClicked = cardElements.filter(card => card.contains(event.target)).length;
 
-  if (modalContentElement.contains(event.target)) {
 
-  }
-  else if(cardsClicked > 0 ) {
-      modalContainerElement.style.display = "block";
-  }
-  else{
-    modalContainerElement.style.display = "none";
-  }
-});
