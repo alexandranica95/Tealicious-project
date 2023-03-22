@@ -149,6 +149,7 @@
 
 .btn-option:hover{
     background-color: $yellow;
+    cursor: pointer;
 }
 
 
@@ -198,4 +199,23 @@
 
 .product-description{
     padding-left: 2em;
+}
+
+.product-detail-modal{
+    /* Stay in place */
+    z-index: 1; /* Sit on top */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    position: fixed;
+    right: 0;  
+    top:0;
+    display: none;
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    animation: .5s fade-in;
+}
+
+.bubble-options, .coffee-option, .waffle-option{
+    display: none;
 }

@@ -1,58 +1,57 @@
 @import '../variables.scss';
 @import '../base.scss';
+@import '../shared/footer/footer.scss';
+@import '../shared/navbar/navbar.scss';
+
+
+.page-container{
+  display: grid;
+}
 
 body {
     $font: "Manrope";
     font-size: 17px;
-    padding: 8px;
-    background-color: $light-grey;
   }
   
   * {
+    font-family: "Manrope", sans-serif;
     box-sizing: border-box;
   }
   
+  h2 {
+    padding-left: 0.9em;
+  }
   .row {
-    display: -ms-flexbox; /* IE10 */
     display: flex;
-    -ms-flex-wrap: wrap; /* IE10 */
     flex-wrap: wrap;
-    margin: 0 -16px;
   }
   
   .col-25 {
-    -ms-flex: 25%; /* IE10 */
-    flex: 25%;
+    padding: 10em;
+    padding-left: 2em;
+    flex: 40%;
+    border-radius: 8px;
   }
   
   .col-50 {
-    -ms-flex: 50%; /* IE10 */
     flex: 50%;
   }
   
   .col-75 {
-    -ms-flex: 75%; /* IE10 */
-    flex: 75%;
-  }
-  
-  .col-25,
-  .col-50,
-  .col-75 {
-    padding: 0 20px;
-  }
-  
-  .container {
-    background-color: $white;
-    padding: 5px 20px 15px 20px;
-    border: 1px solid $dark-grey;
+    flex: 60%;
+    padding: 10em;
     border-radius: 8px;
   }
   
-  input[type=text] {
+  .container {
+    border-radius: 8px;
+  }
+  
+  .col-50 input[type=text] {
     width: 100%;
     margin-bottom: 20px;
-    padding: 12px;
-    border: 1px solid $verydark-grey;
+    padding: 19px;
+    border: 1px solid $dark-grey;
     border-radius: 8px;
   }
   
@@ -74,9 +73,13 @@ body {
     margin: 10px 0;
     border: none;
     width: 100%;
+    height: 3.5em;
+    margin-top: 3em;
+
     border-radius: 8px;
     cursor: pointer;
     font-size: 17px;
+    font-weight: 700;
   }
   
   .btn:hover {
@@ -95,10 +98,90 @@ body {
     float: right;
     color: grey;
   }
-  
+  .navbar-area{
+    background-image: url("/assets/images/footer-1600x680.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 15em;
+  }
+
+.price-and-number-products{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  height: 6%;
+}
+  .cart-final-products-container{
+    display: grid;
+    grid-template-columns: 30% 25% 15% 20%;
+    padding: .2em;
+    text-align: center;
+  }
+
+  .product-title-toppings{
+    display: grid;
+  }
+
+  .total-price{
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 20% 12% 10%;
+    
+  }
+  .number-of-products-cart{
+    display: grid;
+    grid-template-columns: 30% 20%;
+    padding-bottom: 1em;
+  }
+  .quantity-of-products{
+    display: grid;
+    grid-template-columns: 40% 20%;
+    text-align: right;
+  }
+
+  .product-image-final-cart{
+    display: flex;
+    justify-content: center;
+    background-repeat: no-repeat;
+    border-radius: 16px;
+    & > img {
+        width: 4em;
+        height: 4em;
+        border-radius: inherit;
+        display:block;
+        margin:auto;
+      }
+}
+
+.title-of-product{
+  font-size: 0.9em;
+    font-weight: 700;
+}
+
+.topping-selected{
+  font-size: small;
+  color: $verydark-grey;
+}
+
+.line-between{
+  width: 86%;
+  background-color: $dark-grey;
+  height: 0.2px;
+}
+
+
+
+
+.space-between .col-50{
+  padding-right: 10%;
+}
+
+
+
+
+
   /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */
   @media (max-width: 800px) {
-    .row {
+    .page-container {
       flex-direction: column-reverse;
     }
     .col-25 {

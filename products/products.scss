@@ -6,24 +6,18 @@
 
 .grid-container{
      display: grid;
-     grid-template-areas: 
-     'navbar-area'
-     'carousel-area'
-     'categories-area'
-     'footer-area';
  }
 
 .navbar-area{
      background-image: linear-gradient(rgba(13, 12, 12, 0.495), rgba(80, 80, 80, 0.591)), url("/assets/images/menu-banner-1600x680.png");
      background-size: cover;
      background-repeat: no-repeat;
-     height: 28em;
+     height: 30em;
  }
 
 .wrap-container{ 
    display: grid;
    background-color: $light-grey;
-   padding-top: 10em;
    padding-bottom: 10em;
 }
 
@@ -31,22 +25,24 @@
      justify-content: center;
      display: grid;
      grid-template-columns: 15em 15em 15em;
-     grid-gap: 5em;
      height: 15em;
-}
+     padding-top: 5em;
+     grid-gap: 5%;
 
-.category-container > div  {
-     margin: 0 auto;
-     position: relative;
-     background-size: 85%;
-     background-position:50%;
-     background-repeat: no-repeat;
-     width: 60%;
-     height: 75%;
-     border-radius: 15px;
-     background-color: $white;
-     box-shadow: 0.5px 2px 25px $dark-grey;
-     cursor: pointer;
+     div  {
+          margin: 0 auto;
+          position: relative;
+          background-size: 100%;
+          background-position:50%;
+          background-repeat: no-repeat;
+          width: 80%;
+          border-radius: 15px;
+          cursor: pointer;
+     }
+     
+     h5{
+          padding-top: 2em;
+     }
 }
 
  .category-button > div{
@@ -54,7 +50,7 @@
      margin-top: 10%;
      background-size: 100%;
      background-repeat: no-repeat;
-     height: 8em;
+     height: 10em;
      width:70%;
  }
 
@@ -87,7 +83,7 @@
      grid-template-rows: 70%;
      justify-content: center;
      min-height: 8em;
-
+     padding-top: 1em;
 }
 
 select {
@@ -107,34 +103,23 @@ select {
      justify-content: center;
      grid-gap: 3em;
      margin-bottom: 2em;
-
 }
 
 .fruit-tea-products, .milk-tea-products, .cheesecake-products, .coffee-products, .special-coffee-products, .waffle-products {
      display: grid;
      grid-template-columns: 17% 17% 17% 17%;
-     grid-gap: 3em;
+     grid-gap: 3.5em;
      justify-content: center;
 }
 
 .products-container{
-     margin-top: 4%;
+     margin-top: 2%;
      display: grid;
      grid-gap: 7em;
      height: fit-content;
 }
 
-.product-detail-modal{
-     /* Stay in place */
-     z-index: 1; /* Sit on top */
-     width: 100%; /* Full width */
-     height: 100%; /* Full height */
-     overflow: auto; /* Enable scroll if needed */
-     position: fixed;
-     right: 0;  
-     top:0;
-     display: none;
-     background-color: rgb(0,0,0); /* Fallback color */
-     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-     animation: .5s fade-in;
+
+@media (max-width: 700px) {
+     .fruit-tea-products, .milk-tea-products, .cheesecake-products, .coffee-products, .special-coffee-products, .waffle-products { grid-template-columns: repeat(2, 1fr); }
 }
