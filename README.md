@@ -26,8 +26,8 @@ At the checkout stage, they're guided through a smooth and secure transaction pr
 
 # Getting started
 # Installing
-* Run the command git clone https://github.com/alexandranica95/Tealicious-project.git
 * Install Visual Studio Code and the extension Live Server.
+* Run the command git clone https://github.com/alexandranica95/Tealicious-project.git
 # Executing program
 Open Visual studio code then open the project, right click on HTML file and select Open with live server.
 # Authors
