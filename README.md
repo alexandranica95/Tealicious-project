@@ -1,5 +1,7 @@
 # Tealicious-project
 I've developed a front-end application tailored for a bubble tea shop, starting from scratch. This application has a landing page that immediately engages visitors with the shop's offerings. 
+
+Project hosted using Google Firebase: https://tealicious-project.web.app/home/home.html
 # Description
 As my first project I chose to use HTML, CSS, SCSS and Javascript.
 On the landing page the user can access the products catalog from the menu on the top of the page, complete with filtering options to easily find desired flavors or types of bubble tea.
@@ -24,10 +26,11 @@ At the checkout stage, they're guided through a smooth and secure transaction pr
 
 # Getting started
 # Installing
-Run the command git clone https://github.com/alexandranica95/Tealicious-project.git
+* Run the command git clone https://github.com/alexandranica95/Tealicious-project.git
+* Install Visual Studio Code and the extension Live Server.
 # Executing program
-Open Visual studio code, select File and the select the folder where you just cloned the repository and click on to open it.
-Additionally install the extension Live Sass Compiler. Then click watch Sass and Go live on the bottom.
+Open Visual studio code then open the project, right click on HTML file and select Open with live server.
 # Authors
 Nica Alexandra
+
 alexandranica64@gmail.com
